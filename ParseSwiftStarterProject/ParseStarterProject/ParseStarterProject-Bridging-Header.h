@@ -11,3 +11,6 @@
 //#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 #endif
+
+#import "IQKeyBoardManager.h"
+#import "ProgressHUD.h"
