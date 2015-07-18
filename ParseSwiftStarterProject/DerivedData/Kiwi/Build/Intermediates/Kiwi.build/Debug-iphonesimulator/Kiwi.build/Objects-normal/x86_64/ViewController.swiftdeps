@@ -4,15 +4,26 @@ provides:
 nominals:
 - "C4Kiwi14ViewController"
 class-members:
+- "signUp"
 - "viewDidLoad"
+- "logIn"
 - "didReceiveMemoryWarning"
 top-level:
+- !private "UIColor"
+- "UIButton"
 - "UIViewController"
 member-access:
-- "CSo8NSObject"
-- "CSo16UIViewController"
 - "PSs9AnyObject"
+- !private "CSo6UIView"
 - "CSo11UIResponder"
+- !private "CSo8UIButton"
+- !private "V12CoreGraphics7CGFloat"
+- "CSo16UIViewController"
+- "CSo8NSObject"
+- "C4Kiwi14ViewController"
+- !private "CSo7CALayer"
+- !private "CSo7UIColor"
+- !private "CSo9UIControl"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/Swift.swiftmodule"

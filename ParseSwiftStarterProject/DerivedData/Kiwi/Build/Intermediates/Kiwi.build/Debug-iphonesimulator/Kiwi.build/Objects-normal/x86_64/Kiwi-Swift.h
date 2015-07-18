@@ -104,11 +104,14 @@ SWIFT_CLASS("_TtC4Kiwi11AppDelegate")
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIButton;
 @class NSBundle;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC4Kiwi14ViewController")
 @interface ViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified logIn;
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified signUp;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
