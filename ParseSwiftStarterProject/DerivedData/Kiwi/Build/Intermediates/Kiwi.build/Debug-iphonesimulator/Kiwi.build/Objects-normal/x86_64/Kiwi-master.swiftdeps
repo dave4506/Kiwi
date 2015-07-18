@@ -1,6 +1,5 @@
-version: "Apple Swift version 2.0 (swiftlang-700.0.45 clang-700.0.57.2)"
-options: "80eb7695b5d93fd9f595364ec9c6548e"
-build_time: [490565922, 460674000]
+version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
+options: "f096ba1dffa2a06854270d9518e8bfd5"
 inputs: 
-	/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/AppDelegate.swift: !dirty [488395938, 0]
-	/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/ViewController.swift: [488332870, 0]
+- "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/ViewController.swift"
+- "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/AppDelegate.swift"
