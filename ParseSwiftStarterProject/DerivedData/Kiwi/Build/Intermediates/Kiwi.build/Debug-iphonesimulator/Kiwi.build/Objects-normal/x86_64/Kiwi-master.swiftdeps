@@ -1,5 +1,5 @@
 version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
-options: "678cb45f041c454d47a3ff2f1c972bba"
+options: "e64fc2fd4583c2c59ef7076ca771771f"
 inputs: 
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/LoginViewController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/hackViewController.swift"
@@ -9,6 +9,7 @@ inputs:
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/HackCollectionViewCell.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/TextFieldEffects/HoshiTextField.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/PublicProfileController.swift"
+- !dirty "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/chatViewController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/HackexploreViewController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/teamViewController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/TextFieldEffects/JiroTextField.swift"

@@ -50,6 +50,12 @@ class PublicProfileController: UIViewController, UICollectionViewDataSource, UIC
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func chatAction(sender: AnyObject) {
+        var query = PFQuery(className: "Rooms")
+        query.whereKey("users", containsAllObjectsInArray: [PFUser.currentUser()!.username,user.username])
+        self.performSegueWithIdentifier("chat", sender: self)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
