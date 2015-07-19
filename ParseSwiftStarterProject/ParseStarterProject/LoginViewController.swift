@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
             if user != nil {
                 
                 ProgressHUD.showSuccess("Login is Valid!")
-                let main = UIStoryboard(name: "ExploreTStoryBoard", bundle: nil)
+                let main = UIStoryboard(name: "TeamPeople", bundle: nil)
                 let vc = main.instantiateViewControllerWithIdentifier("NavCon") as! UINavigationController
                 self.showViewController(vc, sender: self)
                 //self.performSegueWithIdentifier("logingood", sender: nil)
