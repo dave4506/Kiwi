@@ -12,6 +12,7 @@ import UIKit
 class SearchViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate {
     
     var id = ""
+    var user:PFUser = PFUser()
     @IBOutlet weak var teams: UIButton!
     @IBOutlet weak var hackers: UIButton!
     @IBOutlet weak var textField: IsaoTextField!
@@ -76,9 +77,15 @@ class SearchViewController: UIViewController, UICollectionViewDelegateFlowLayout
         }
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var obj = arr[indexPath.row] as! PFObject
-        id = obj.objectId!
-        self.performSegueWithIdentifier("team", sender: self)
+        if self.classname != "_User" {
+            var obj = arr[indexPath.row] as! PFObject
+            id = obj.objectId!
+            self.performSegueWithIdentifier("team", sender: self)
+        } else {
+            var obj = arr[indexPath.row] as! PFObject
+            self.user = obj as! PFUser
+            self.performSegueWithIdentifier("profile", sender: self)
+        }
     }
     func searchAll(){
         arr = []
@@ -179,6 +186,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegateFlowLayout
         if segue.identifier == "team" {
             let vc:JoinTeamViewController = segue.destinationViewController as! JoinTeamViewController
             vc.id = self.id
+        }
+        if segue.identifier == "profile" {
+            let vc:PublicProfileController = segue.destinationViewController as! PublicProfileController
+            println("self.iser\(self.user)")
+            vc.user = self.user
         }
     }
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {

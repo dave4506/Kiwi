@@ -10,13 +10,11 @@ import Foundation
 import Parse
 class teamViewController: UIViewController {
 
-    @IBOutlet weak var request: UIButton!
     @IBOutlet weak var Create: UIButton!
     @IBOutlet weak var team: UIButton!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var profile: UIImageView!
     override func viewDidLoad() {
-        request.layer.cornerRadius = 25;
         team.layer.cornerRadius = 25;
         Create.layer.cornerRadius = 25;
         

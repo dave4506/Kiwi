@@ -386,6 +386,40 @@ SWIFT_CLASS("_TtC4Kiwi21ProfileViewController")
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class PFUser;
+
+SWIFT_CLASS("_TtC4Kiwi23PublicProfileController")
+@interface PublicProfileController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified name;
+@property (nonatomic) IBOutlet UICollectionView * __null_unspecified detailsCollection;
+@property (nonatomic, copy) NSArray * __nonnull skills;
+@property (nonatomic) PFUser * __nonnull user;
+@property (nonatomic, copy) NSArray * __nonnull textArr;
+@property (nonatomic, copy) NSArray * __nonnull authorArr;
+@property (nonatomic) IBOutlet UIImageView * __null_unspecified coverPic;
+@property (nonatomic) IBOutlet UIImageView * __null_unspecified profilePic;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)collectionView:(UICollectionView * __nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)collectionView:(UICollectionView * __nonnull)collectionView didDeselectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
+- (UIEdgeInsets)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi28PublicTextCollectionViewCell")
+@interface PublicTextCollectionViewCell : UICollectionViewCell
+@property (nonatomic) IBOutlet UILabel * __null_unspecified textMessage;
+@property (nonatomic) IBOutlet UILabel * __null_unspecified textAuthor;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC4Kiwi33SearchCandidateCollectionViewCell")
 @interface SearchCandidateCollectionViewCell : UICollectionViewCell
@@ -400,6 +434,7 @@ SWIFT_CLASS("_TtC4Kiwi33SearchCandidateCollectionViewCell")
 SWIFT_CLASS("_TtC4Kiwi20SearchViewController")
 @interface SearchViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, copy) NSString * __nonnull id;
+@property (nonatomic) PFUser * __nonnull user;
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified teams;
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified hackers;
 @property (nonatomic, weak) IBOutlet IsaoTextField * __null_unspecified textField;

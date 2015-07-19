@@ -1,5 +1,5 @@
 version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
-options: "79bac2f38eebff9b8dda2f67b59126c7"
+options: "678cb45f041c454d47a3ff2f1c972bba"
 inputs: 
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/LoginViewController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/hackViewController.swift"
@@ -8,6 +8,7 @@ inputs:
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/SearchCandidateCollectionViewCell.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/HackCollectionViewCell.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/TextFieldEffects/HoshiTextField.swift"
+- "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/PublicProfileController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/HackexploreViewController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/teamViewController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/TextFieldEffects/JiroTextField.swift"
@@ -19,6 +20,7 @@ inputs:
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/SignInViewController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/AppDelegate.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/SearchViewController.swift"
+- "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/PublicTextCollectionViewCell.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/TextFieldEffects/TextFieldsEffects.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ProfileController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/ProfileViewController.swift"
