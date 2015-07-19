@@ -147,13 +147,13 @@
                                                         <exclude reference="Tbs-ds-12C"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="RP9-fp-CiA"/>
-                                                        <exclude reference="mhe-re-Ddg"/>
-                                                        <exclude reference="xTE-ze-eEU"/>
                                                         <exclude reference="DEX-dH-BS7"/>
                                                         <exclude reference="Mu5-qE-BpZ"/>
                                                         <exclude reference="fyU-1V-8bq"/>
                                                         <exclude reference="lZw-mc-dM1"/>
+                                                        <exclude reference="RP9-fp-CiA"/>
+                                                        <exclude reference="mhe-re-Ddg"/>
+                                                        <exclude reference="xTE-ze-eEU"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -162,13 +162,13 @@
                                                         <include reference="Tbs-ds-12C"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="RP9-fp-CiA"/>
-                                                        <include reference="mhe-re-Ddg"/>
-                                                        <include reference="xTE-ze-eEU"/>
                                                         <include reference="DEX-dH-BS7"/>
                                                         <include reference="Mu5-qE-BpZ"/>
                                                         <include reference="fyU-1V-8bq"/>
                                                         <include reference="lZw-mc-dM1"/>
+                                                        <include reference="RP9-fp-CiA"/>
+                                                        <include reference="mhe-re-Ddg"/>
+                                                        <include reference="xTE-ze-eEU"/>
                                                     </mask>
                                                 </variation>
                                             </collectionViewCell>
@@ -254,18 +254,18 @@
                                 <exclude reference="4pa-on-0Io"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5LO-cl-5EN"/>
-                                <exclude reference="HDF-ae-hfz"/>
-                                <exclude reference="kPI-Aa-VKQ"/>
-                                <exclude reference="HHB-gO-6bK"/>
-                                <exclude reference="po6-72-XDq"/>
+                                <exclude reference="7cV-fg-hRA"/>
+                                <exclude reference="DIz-Cf-3Kf"/>
+                                <exclude reference="e7F-ri-4XZ"/>
                                 <exclude reference="TyZ-gr-qDH"/>
                                 <exclude reference="fZl-k9-hPi"/>
                                 <exclude reference="w6j-fQ-MJ7"/>
                                 <exclude reference="wl2-yV-Zny"/>
-                                <exclude reference="7cV-fg-hRA"/>
-                                <exclude reference="DIz-Cf-3Kf"/>
-                                <exclude reference="e7F-ri-4XZ"/>
+                                <exclude reference="HHB-gO-6bK"/>
+                                <exclude reference="po6-72-XDq"/>
+                                <exclude reference="5LO-cl-5EN"/>
+                                <exclude reference="HDF-ae-hfz"/>
+                                <exclude reference="kPI-Aa-VKQ"/>
                                 <exclude reference="3kq-eP-QTj"/>
                                 <exclude reference="7Mu-Yp-JGQ"/>
                                 <exclude reference="AFx-Be-Ehu"/>
@@ -282,18 +282,18 @@
                                 <include reference="4pa-on-0Io"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5LO-cl-5EN"/>
-                                <include reference="HDF-ae-hfz"/>
-                                <include reference="kPI-Aa-VKQ"/>
-                                <include reference="HHB-gO-6bK"/>
-                                <include reference="po6-72-XDq"/>
+                                <include reference="7cV-fg-hRA"/>
+                                <include reference="DIz-Cf-3Kf"/>
+                                <include reference="e7F-ri-4XZ"/>
                                 <include reference="TyZ-gr-qDH"/>
                                 <include reference="fZl-k9-hPi"/>
                                 <include reference="w6j-fQ-MJ7"/>
                                 <include reference="wl2-yV-Zny"/>
-                                <include reference="7cV-fg-hRA"/>
-                                <include reference="DIz-Cf-3Kf"/>
-                                <include reference="e7F-ri-4XZ"/>
+                                <include reference="HHB-gO-6bK"/>
+                                <include reference="po6-72-XDq"/>
+                                <include reference="5LO-cl-5EN"/>
+                                <include reference="HDF-ae-hfz"/>
+                                <include reference="kPI-Aa-VKQ"/>
                                 <include reference="3kq-eP-QTj"/>
                                 <include reference="7Mu-Yp-JGQ"/>
                                 <include reference="AFx-Be-Ehu"/>
