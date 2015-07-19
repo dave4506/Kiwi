@@ -18,5 +18,12 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func chat(sender: AnyObject) {
+        let main = UIStoryboard(name: "chatStoryBoard", bundle: nil)
+        let vc = main.instantiateViewControllerWithIdentifier("navCon") as! UINavigationController
+        self.showViewController(vc, sender: self)
+
+    }
 }
 

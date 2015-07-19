@@ -11,3 +11,5 @@
 //#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 #endif
+#import "JSQMessages.h"
+#import <Firebase/Firebase.h>

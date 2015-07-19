@@ -1,5 +1,9 @@
 version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
-options: "f096ba1dffa2a06854270d9518e8bfd5"
+options: "ec6148df3e4c7b30e7895e76157c20b4"
 inputs: 
+- "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/chatTableViewController.swift"
+- "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/Message.swift"
+- "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/chatViewController.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/ViewController.swift"
+- "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/chatViewCell.swift"
 - "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/AppDelegate.swift"

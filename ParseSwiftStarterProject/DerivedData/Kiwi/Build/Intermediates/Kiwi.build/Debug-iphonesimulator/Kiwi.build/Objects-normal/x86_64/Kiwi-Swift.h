@@ -84,7 +84,11 @@ typedef struct _NSZone NSZone;
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import ObjectiveC;
+@import CoreGraphics;
 #endif
+
+#import "/Users/duffelbag/Documents/Kiwi_new/ParseSwiftStarterProject/ParseStarterProject/ParseStarterProject-Bridging-Header.h"
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
@@ -104,6 +108,22 @@ SWIFT_CLASS("_TtC4Kiwi11AppDelegate")
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSDate;
+
+SWIFT_CLASS("_TtC4Kiwi7Message")
+@interface Message : NSObject
+@property (nonatomic, copy) NSString * __nonnull text_;
+@property (nonatomic, copy) NSString * __nonnull sender_;
+@property (nonatomic) NSDate * __nonnull date_;
+@property (nonatomic, copy) NSString * __nullable imageUrl_;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithText:(NSString * __nullable)text sender:(NSString * __nullable)sender;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithText:(NSString * __nullable)text sender:(NSString * __nullable)sender imageUrl:(NSString * __nullable)imageUrl OBJC_DESIGNATED_INITIALIZER;
+- (NSString * __null_unspecified)text;
+- (NSString * __null_unspecified)sender;
+- (NSDate * __null_unspecified)date;
+- (NSString * __nullable)imageUrl;
+@end
+
 @class NSBundle;
 @class NSCoder;
 
@@ -111,6 +131,84 @@ SWIFT_CLASS("_TtC4Kiwi14ViewController")
 @interface ViewController : UIViewController
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (IBAction)chat:(id __nonnull)sender;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+@class NSIndexPath;
+@class UITableViewCell;
+
+SWIFT_CLASS("_TtC4Kiwi23chatTableViewController")
+@interface chatTableViewController : UIViewController <UIActionSheetDelegate, UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, weak) IBOutlet UITableView * __null_unspecified tableView;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITextView;
+@class UILabel;
+@class UIImageView;
+
+SWIFT_CLASS("_TtC4Kiwi12chatViewCell")
+@interface chatViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UITextView * __null_unspecified lastMessage;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified name;
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified profilePic;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * __nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class Firebase;
+@class NSMutableArray;
+@class JSQMessagesAvatarImage;
+@class JSQMessagesBubbleImage;
+@class UIBarButtonItem;
+@class UIButton;
+@class JSQMessagesCollectionView;
+@protocol JSQMessageData;
+@protocol JSQMessageBubbleImageDataSource;
+@protocol JSQMessageAvatarImageDataSource;
+@class UICollectionView;
+@class UICollectionViewCell;
+@class NSAttributedString;
+@class JSQMessagesCollectionViewFlowLayout;
+
+SWIFT_CLASS("_TtC4Kiwi18chatViewController")
+@interface chatViewController : JSQMessagesViewController
+@property (nonatomic) Firebase * __null_unspecified fire;
+@property (nonatomic, copy) NSString * __nonnull roomId;
+@property (nonatomic) NSMutableArray * __nonnull users;
+@property (nonatomic) NSMutableArray * __nonnull messages;
+@property (nonatomic, copy) NSDictionary * __nonnull avatars;
+@property (nonatomic) JSQMessagesBubbleImage * __null_unspecified outgoingBubbleImageView;
+@property (nonatomic) JSQMessagesBubbleImage * __null_unspecified incomingBubbleImageView;
+@property (nonatomic, copy) NSString * __null_unspecified senderImageUrl;
+@property (nonatomic) BOOL batchMessages;
+@property (nonatomic) Firebase * __null_unspecified ref;
+@property (nonatomic, copy) NSString * __nonnull username;
+@property (nonatomic) Firebase * __null_unspecified messagesRef;
+- (void)setupFirebase;
+- (void)sendMessage:(NSString * __null_unspecified)text sender:(NSString * __null_unspecified)sender;
+- (void)tempSendMessage:(NSString * __null_unspecified)text sender:(NSString * __null_unspecified)sender;
+- (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)receivedMessagePressed:(UIBarButtonItem * __nonnull)sender;
+- (void)didPressSendButton:(UIButton * __null_unspecified)button withMessageText:(NSString * __null_unspecified)text senderId:(NSString * __null_unspecified)senderId senderDisplayName:(NSString * __null_unspecified)senderDisplayName date:(NSDate * __null_unspecified)date;
+- (void)didPressAccessoryButton:(UIButton * __null_unspecified)sender;
+- (id <JSQMessageData> __null_unspecified)collectionView:(JSQMessagesCollectionView * __null_unspecified)collectionView messageDataForItemAtIndexPath:(NSIndexPath * __null_unspecified)indexPath;
+- (id <JSQMessageBubbleImageDataSource> __null_unspecified)collectionView:(JSQMessagesCollectionView * __null_unspecified)collectionView messageBubbleImageDataForItemAtIndexPath:(NSIndexPath * __null_unspecified)indexPath;
+- (id <JSQMessageAvatarImageDataSource> __null_unspecified)collectionView:(JSQMessagesCollectionView * __null_unspecified)collectionView avatarImageDataForItemAtIndexPath:(NSIndexPath * __null_unspecified)indexPath;
+- (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (NSAttributedString * __null_unspecified)collectionView:(JSQMessagesCollectionView * __null_unspecified)collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:(NSIndexPath * __null_unspecified)indexPath;
+- (CGFloat)collectionView:(JSQMessagesCollectionView * __null_unspecified)collectionView layout:(JSQMessagesCollectionViewFlowLayout * __null_unspecified)collectionViewLayout heightForMessageBubbleTopLabelAtIndexPath:(NSIndexPath * __null_unspecified)indexPath;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
