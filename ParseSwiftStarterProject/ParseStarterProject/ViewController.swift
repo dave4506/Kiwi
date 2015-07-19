@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         if let currentUser = PFUser.currentUser() {
            // ProgressHUD.show(nil, interaction: false)
-            self.performSegueWithIdentifier("passby", sender: nil)
+            //self.performSegueWithIdentifier("passby", sender: nil)
             
             
         }

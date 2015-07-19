@@ -478,6 +478,7 @@ SWIFT_CLASS("_TtC4Kiwi18teamViewController")
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified name;
 @property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified profile;
 - (void)viewDidLoad;
+- (IBAction)SignOut:(id __nonnull)sender;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)loadHack;
 - (void)didReceiveMemoryWarning;

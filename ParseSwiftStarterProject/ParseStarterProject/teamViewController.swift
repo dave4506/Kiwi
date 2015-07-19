@@ -16,12 +16,26 @@ class teamViewController: UIViewController {
     @IBOutlet weak var profile: UIImageView!
     override func viewDidLoad() {
 
-        team.layer.cornerRadius = 10;
-        Create.layer.cornerRadius = 10;
+        team.layer.cornerRadius = 25;
+        Create.layer.cornerRadius = 25;
         
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func JoinTeam(sender: AnyObject) {
+        let main = UIStoryboard(name: "TeamPeople", bundle: nil)
+        let vc = main.instantiateViewControllerWithIdentifier("navCon") as! UINavigationController
+        self.showViewController(vc, sender: self)
+    }
+    @IBAction func profileAction(sender: AnyObject) {
+        let main = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = main.instantiateViewControllerWithIdentifier("navCon") as! UINavigationController
+        self.showViewController(vc, sender: self)
+    }
+    @IBAction func SignOut(sender: AnyObject) {
+        PFUser.logOut();
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        ProgressHUD.showSuccess(nil)    }
     override func viewWillAppear(animated: Bool) {
         self.loadHack()
     }
@@ -37,7 +51,7 @@ class teamViewController: UIViewController {
                 println("Successfully retrieved the object.")
                 if let object = object {
                     self.name.text = object["name"] as! String
-                    let userImageFile = object["imageFile"] as! PFFile
+                    let userImageFile = object["image"] as! PFFile
                     userImageFile.getDataInBackgroundWithBlock {
                         (imageData: NSData?, error: NSError?) -> Void in
                         if error == nil {
