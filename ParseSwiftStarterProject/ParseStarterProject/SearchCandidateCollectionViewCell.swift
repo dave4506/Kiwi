@@ -10,7 +10,6 @@ import UIKit
 
 class SearchCandidateCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var topSkill: UILabel!
     @IBOutlet var skills: UILabel!
     @IBOutlet var name: UILabel!
     @IBOutlet var profilePic: UIImageView!

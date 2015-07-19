@@ -251,11 +251,21 @@ SWIFT_CLASS("_TtC4Kiwi26JoinTeamCollectionViewCell")
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITextView;
 
 SWIFT_CLASS("_TtC4Kiwi22JoinTeamViewController")
 @interface JoinTeamViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
+@property (nonatomic, weak) IBOutlet UICollectionView * __null_unspecified collectView;
+@property (nonatomic) NSMutableArray * __nonnull arr;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified Needs;
+@property (nonatomic, weak) IBOutlet UITextView * __null_unspecified Description;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified Team;
+@property (nonatomic, copy) NSString * __nonnull id;
 @property (nonatomic) IBOutlet UIButton * __null_unspecified requestToJoinButton;
+- (IBAction)requestAction:(id __nonnull)sender;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)setup;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
 - (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
@@ -379,7 +389,6 @@ SWIFT_CLASS("_TtC4Kiwi21ProfileViewController")
 
 SWIFT_CLASS("_TtC4Kiwi33SearchCandidateCollectionViewCell")
 @interface SearchCandidateCollectionViewCell : UICollectionViewCell
-@property (nonatomic) IBOutlet UILabel * __null_unspecified topSkill;
 @property (nonatomic) IBOutlet UILabel * __null_unspecified skills;
 @property (nonatomic) IBOutlet UILabel * __null_unspecified name;
 @property (nonatomic) IBOutlet UIImageView * __null_unspecified profilePic;
@@ -390,12 +399,25 @@ SWIFT_CLASS("_TtC4Kiwi33SearchCandidateCollectionViewCell")
 
 SWIFT_CLASS("_TtC4Kiwi20SearchViewController")
 @interface SearchViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
+@property (nonatomic, copy) NSString * __nonnull id;
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified teams;
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified hackers;
+@property (nonatomic, weak) IBOutlet IsaoTextField * __null_unspecified textField;
+@property (nonatomic, copy) NSString * __nonnull classname;
+@property (nonatomic) NSMutableArray * __nonnull arr;
 @property (nonatomic) IBOutlet UICollectionView * __null_unspecified searchCollectionView;
 @property (nonatomic) IBOutlet IsaoTextField * __null_unspecified searchTextField;
 - (void)viewDidLoad;
+- (IBAction)search:(id __nonnull)sender;
+- (IBAction)hackerAction:(id __nonnull)sender;
+- (IBAction)teamAction:(id __nonnull)sender;
+- (void)loadAll;
+- (void)collectionView:(UICollectionView * __nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)searchAll;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
 - (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)prepareForSegue:(UIStoryboardSegue * __nonnull)segue sender:(id __nullable)sender;
 - (void)collectionView:(UICollectionView * __nonnull)collectionView didDeselectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
 - (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
 - (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
@@ -478,6 +500,8 @@ SWIFT_CLASS("_TtC4Kiwi18teamViewController")
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified name;
 @property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified profile;
 - (void)viewDidLoad;
+- (IBAction)JoinTeam:(id __nonnull)sender;
+- (IBAction)profileAction:(id __nonnull)sender;
 - (IBAction)SignOut:(id __nonnull)sender;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)loadHack;
