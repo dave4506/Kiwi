@@ -16,6 +16,7 @@
 		07FCAA351B5AFC9600102155 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCAA2B1B5AFC9600102155 /* MinoruTextField.swift */; };
 		07FCAA361B5AFC9600102155 /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCAA2D1B5AFC9600102155 /* TextFieldsEffects.swift */; };
 		07FCAA371B5AFC9600102155 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCAA2E1B5AFC9600102155 /* YokoTextField.swift */; };
+		81276B981B5C06C100D51DF2 /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81276B971B5C06C100D51DF2 /* SkillTableViewCell.swift */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
 		81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814C1A49DA1800E65899 /* ViewController.swift */; };
 		81BA81501A49DA1800E65899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81BA814E1A49DA1800E65899 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		07FCAA2C1B5AFC9600102155 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		07FCAA2D1B5AFC9600102155 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		07FCAA2E1B5AFC9600102155 /* YokoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YokoTextField.swift; sourceTree = "<group>"; };
+		81276B971B5C06C100D51DF2 /* SkillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
 		81BA81451A49DA1800E65899 /* Kiwi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiwi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BA81491A49DA1800E65899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BA814A1A49DA1800E65899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				9E11FEE61B5B4F3900E6E7E6 /* JoinackOrProfileViewController.swift */,
 				9E11FEE81B5B59AD00E6E7E6 /* ProfileController.swift */,
 				81EA501B1B5B19B700793316 /* LoginViewController.swift */,
+				81276B971B5C06C100D51DF2 /* SkillTableViewCell.swift */,
 				81EA501D1B5B1DA700793316 /* Profile.storyboard */,
 				81EA4FDB1B5B0A6900793316 /* SignInViewController.swift */,
 				81EA501F1B5B200300793316 /* ProfileViewController.swift */,
@@ -445,6 +448,7 @@
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				81EA500C1B5B0F5000793316 /* IQTitleBarButtonItem.m in Sources */,
 				07FCAA341B5AFC9600102155 /* MadokaTextField.swift in Sources */,
+				81276B981B5C06C100D51DF2 /* SkillTableViewCell.swift in Sources */,
 				81EA50201B5B200300793316 /* ProfileViewController.swift in Sources */,
 				81EA50051B5B0F5000793316 /* IQUIViewController+Additions.m in Sources */,
 				81EA500A1B5B0F5000793316 /* IQTextView.m in Sources */,

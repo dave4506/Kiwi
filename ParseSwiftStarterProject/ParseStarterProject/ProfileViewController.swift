@@ -9,30 +9,24 @@
 import UIKit
 import Parse
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,UIActionSheetDelegate, UITableViewDelegate, UITableViewDataSource{
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var occupation: IsaoTextField!
     @IBOutlet weak var fullName: IsaoTextField!
-    @IBOutlet weak var skil: UILabel!
     @IBOutlet var profilePic: UIImageView!
     var skills = ["None","iOS Dev", "Web Dev", "Full Stack Dev","Front End Dev", "Backend Dev","Designer","Android Dev","Algorithms"]
     var skillToAdd = ""
     var skillArray:NSMutableArray = []
-    @IBOutlet var skillPicker: UIPickerView!
-    @IBOutlet var deleteButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.deleteButton.layer.cornerRadius = 6
-        self.skillPicker.hidden = true
-        self.skillPicker.dataSource = self
-        self.skillPicker.delegate = self
+        
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         self.loadStuff()
         
-        self.skillPicker.hidden = false
-        
-        
-
         
         // Do any additional setup after loading the view.
     }
@@ -40,7 +34,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
         let userNow = PFUser.currentUser()!
         userNow["Name"] = fullName.text
         userNow["Occu"] = occupation.text
-        userNow["Skills"] = skillArray
+        userNow["Skills"] = skillArray as NSArray
         userNow.saveInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             ProgressHUD.showSuccess(nil)
@@ -61,12 +55,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
         if(userMan["Occu"] != nil){
             occupation.text = PFUser.currentUser()!["Occu"] as! String
         }
+        /*
         if(userMan["Skills"] != nil){
             let dic = userMan["Skills"] as! NSArray
             for var i = 0; i < dic.count; i++ {
                 skil.text = skil.text! + "\(dic[i]),"
             }
         }
+*/
         if(userMan["profilepic"] == nil){
             profilePic.image = UIImage(contentsOfFile: "prof.jpg")
             self.profilePic.layer.cornerRadius = self.profilePic.frame.height / 2
@@ -137,36 +133,60 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func deleteButtonPressed() {
-        //delete account from parse
-        print("delete")
-    }
-
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
         return 1
     }
     
-    // returns the # of rows in each component..
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return skills.count
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return 3
     }
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return skills[row]
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:SkillTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SkillTableViewCell
+        if(cell.switchButton.on == true){
+            skillArray.addObject((cell.skill.text as String?)!)
+            
+        }
+        if (indexPath.row == 0){
+            cell.skill.text = "iOS Developer"
+            cell.switchButton.setOn(false, animated: true)
+        }
+        if (indexPath.row == 1){
+            cell.skill.text = "Web Developer"
+            cell.switchButton.setOn(false, animated: true)
+        }
+        if (indexPath.row == 2){
+            cell.skill.text = "Back End Developer"
+            cell.switchButton.setOn(false, animated: true)
+        }
+        
+        return cell
     }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        skillToAdd = skills[row]
+    /*
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell:SkillTableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! SkillTableViewCell
         let userNow = PFUser.currentUser()!
+        switch (indexPath.row) {
+            case 0:
+                cell.switchButton.setOn(true, animated: true)
+            
+            
+            case 1:
+                cell.switchButton.setOn(true, animated: true)
+                userNow["Skills"]?.addObject("iOS Dev")
+            default:
+                println("Default")
+        }
+        userNow.saveInBackground()
         
-        skillArray.addObject(skillToAdd)
-        
-        //userNow.addObject([skillToAdd], forKey: "Skills")
-       
-        skil.text = skil.text! + "\(skillToAdd), " as String
-        
-        //print(skillToAdd)
     }
+    */
+    // returns the # of rows in each component..
+    
     
     /*
     // MARK: - Navigation
