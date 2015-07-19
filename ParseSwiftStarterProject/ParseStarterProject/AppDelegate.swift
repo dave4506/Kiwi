@@ -25,6 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //--------------------------------------
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        
+        
+        
+        
+        
+        var storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        var initViewController = storyboard.instantiateInitialViewController()
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.rootViewController = initViewController as! UIViewController
+        
+        self.window?.makeKeyAndVisible()
+        
         // Enable storing and querying data from Local Datastore. 
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
         Parse.enableLocalDatastore()

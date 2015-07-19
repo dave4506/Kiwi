@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="USu-zA-S8D">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="E75-Vz-Afp">
+            <objects>
+                <viewController id="v41-3K-2LZ" customClass="ProfileViewController" customModule="Kiwi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WOA-Uv-NvJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sko-Jx-oHS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hMq-9d-M9m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUW-pB-aSE">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNA-yf-OlQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="v5R-cz-ewP"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="v5R-cz-ewP"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="v5R-cz-ewP"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="90I-Mt-2Vv" kind="embed" id="YR9-mL-h5A"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fNA-yf-OlQ" firstAttribute="leading" secondItem="RUW-pB-aSE" secondAttribute="leading" constant="60" id="3NU-fP-M0Y">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="fNA-yf-OlQ" secondAttribute="trailing" constant="60" id="F4a-0q-qsp">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="fNA-yf-OlQ" secondAttribute="bottom" constant="260" id="qJs-Dr-LNG">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="-200"/>
+                                    </constraint>
+                                    <constraint firstItem="fNA-yf-OlQ" firstAttribute="centerX" secondItem="RUW-pB-aSE" secondAttribute="centerX" id="qkf-zZ-cuR"/>
+                                    <constraint firstItem="fNA-yf-OlQ" firstAttribute="top" secondItem="RUW-pB-aSE" secondAttribute="top" constant="260" id="qlX-Gf-sBD">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="fNA-yf-OlQ"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="3NU-fP-M0Y"/>
+                                        <exclude reference="F4a-0q-qsp"/>
+                                        <exclude reference="qJs-Dr-LNG"/>
+                                        <exclude reference="qkf-zZ-cuR"/>
+                                        <exclude reference="qlX-Gf-sBD"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="fNA-yf-OlQ"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="3NU-fP-M0Y"/>
+                                        <include reference="F4a-0q-qsp"/>
+                                        <include reference="qJs-Dr-LNG"/>
+                                        <include reference="qkf-zZ-cuR"/>
+                                        <include reference="qlX-Gf-sBD"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RUW-pB-aSE" firstAttribute="bottom" secondItem="Sko-Jx-oHS" secondAttribute="top" id="3s1-dj-eck"/>
+                            <constraint firstAttribute="trailing" secondItem="RUW-pB-aSE" secondAttribute="trailing" id="D8P-aN-u3z"/>
+                            <constraint firstItem="RUW-pB-aSE" firstAttribute="top" secondItem="hMq-9d-M9m" secondAttribute="top" id="oHM-4o-ERE"/>
+                            <constraint firstItem="RUW-pB-aSE" firstAttribute="leading" secondItem="hMq-9d-M9m" secondAttribute="leading" id="zNO-CJ-kfH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="RUW-pB-aSE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3s1-dj-eck"/>
+                                <exclude reference="D8P-aN-u3z"/>
+                                <exclude reference="oHM-4o-ERE"/>
+                                <exclude reference="zNO-CJ-kfH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="RUW-pB-aSE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3s1-dj-eck"/>
+                                <include reference="D8P-aN-u3z"/>
+                                <include reference="oHM-4o-ERE"/>
+                                <include reference="zNO-CJ-kfH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="Jbz-ug-mAN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzP-IL-ilu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="477" y="-315.75"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="KDb-BT-fst">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="90I-Mt-2Vv" customClass="ProfileViewController" customModule="Kiwi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yc9-0o-ACI"/>
+                        <viewControllerLayoutGuide type="bottom" id="jtH-GM-KhV"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ana-fa-1Gr">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prof" translatesAutoresizingMaskIntoConstraints="NO" id="6Xj-Xa-2J8">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="LrR-HT-S3F"/>
+                                    <constraint firstAttribute="height" constant="130" id="Zy0-6P-jWI"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LrR-HT-S3F"/>
+                                        <exclude reference="Zy0-6P-jWI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="LrR-HT-S3F"/>
+                                        <include reference="Zy0-6P-jWI"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKs-E0-KjF">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Change Profile Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="124" y="180" width="153" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="changeProPic:" destination="90I-Mt-2Vv" eventType="touchUpInside" id="JrU-B2-yn2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.71531904820000003" green="0.91737648140000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MKs-E0-KjF" firstAttribute="top" secondItem="6Xj-Xa-2J8" secondAttribute="bottom" constant="8" id="LFp-GX-zWF"/>
+                            <constraint firstAttribute="centerY" secondItem="MKs-E0-KjF" secondAttribute="centerY" constant="305" id="Qa1-f6-Ozd"/>
+                            <constraint firstAttribute="centerX" secondItem="MKs-E0-KjF" secondAttribute="centerX" constant="-0.5" id="eAY-kG-AlD"/>
+                            <constraint firstAttribute="centerY" secondItem="6Xj-Xa-2J8" secondAttribute="centerY" constant="393" id="qQh-SN-x0p"/>
+                            <constraint firstAttribute="centerX" secondItem="6Xj-Xa-2J8" secondAttribute="centerX" id="uiD-4g-c2V"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="6Xj-Xa-2J8"/>
+                                <exclude reference="MKs-E0-KjF"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="qQh-SN-x0p"/>
+                                <exclude reference="uiD-4g-c2V"/>
+                                <exclude reference="LFp-GX-zWF"/>
+                                <exclude reference="Qa1-f6-Ozd"/>
+                                <exclude reference="eAY-kG-AlD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="6Xj-Xa-2J8"/>
+                                <include reference="MKs-E0-KjF"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="qQh-SN-x0p"/>
+                                <include reference="uiD-4g-c2V"/>
+                                <include reference="LFp-GX-zWF"/>
+                                <include reference="Qa1-f6-Ozd"/>
+                                <include reference="eAY-kG-AlD"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="profilePic" destination="6Xj-Xa-2J8" id="SkQ-Ec-c1M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bu1-az-QAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1165.5" y="-240.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ofR-Kz-lVa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="USu-zA-S8D" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ehl-BR-yRC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="v41-3K-2LZ" kind="relationship" relationship="rootViewController" id="URf-Ef-SjY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJ2-E4-IFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-441" y="-315.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="prof" width="259" height="194"/>
+    </resources>
+</document>
