@@ -55,6 +55,7 @@
 		9E11FEE91B5B59AD00E6E7E6 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11FEE81B5B59AD00E6E7E6 /* ProfileController.swift */; };
 		9E11FEEB1B5B86D900E6E7E6 /* Public_Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E11FEEA1B5B86D900E6E7E6 /* Public_Profile.storyboard */; };
 		9E11FEED1B5B87E500E6E7E6 /* PublicProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11FEEC1B5B87E500E6E7E6 /* PublicProfileController.swift */; };
+		9E7F23501B5C224500E8AC10 /* PublicTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F234F1B5C224500E8AC10 /* PublicTextCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		9E11FEE81B5B59AD00E6E7E6 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = ../ProfileController.swift; sourceTree = "<group>"; };
 		9E11FEEA1B5B86D900E6E7E6 /* Public_Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Public_Profile.storyboard; path = ../Public_Profile.storyboard; sourceTree = "<group>"; };
 		9E11FEEC1B5B87E500E6E7E6 /* PublicProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfileController.swift; sourceTree = "<group>"; };
+		9E7F234F1B5C224500E8AC10 /* PublicTextCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicTextCollectionViewCell.swift; path = ../PublicTextCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
+				9E7F234F1B5C224500E8AC10 /* PublicTextCollectionViewCell.swift */,
 				81EA50211B5B22E700793316 /* EditProfileViewController.swift */,
 				9E11FEEA1B5B86D900E6E7E6 /* Public_Profile.storyboard */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
@@ -433,6 +436,7 @@
 			files = (
 				81EA50221B5B22E700793316 /* EditProfileViewController.swift in Sources */,
 				81EA501C1B5B19B700793316 /* LoginViewController.swift in Sources */,
+				9E7F23501B5C224500E8AC10 /* PublicTextCollectionViewCell.swift in Sources */,
 				81EA50071B5B0F5000793316 /* IQKeyboardManager.m in Sources */,
 				9E11FEE71B5B4F3900E6E7E6 /* JoinackOrProfileViewController.swift in Sources */,
 				07FCAA331B5AFC9600102155 /* KaedeTextField.swift in Sources */,

@@ -12,7 +12,9 @@ import Parse
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
 
     @IBOutlet var profilePic: UIImageView!
-    var skills = ["None","iOS Dev", "Web Dev", "Full Stack Dev","Front End Dev", "Backend Dev","Designer","Android Dev","Algorithms"]
+    
+    
+    
     var skillToAdd = ""
     @IBOutlet var skillPicker: UIPickerView!
     @IBOutlet var occupationTextField: UITextView!
@@ -111,15 +113,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
     
     // returns the # of rows in each component..
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return skills.count
+        return 1
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return skills[row]
+        return ""
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        skillToAdd = skills[row]
-        print(skillToAdd)
+        
     }
     
     /*

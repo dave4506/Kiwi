@@ -11,12 +11,20 @@ import Parse
 
 class PublicProfileController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet var detailsCollection: UICollectionView!
+    
+    var skills = ["None","iOS Dev", "Web Dev", "Full Stack Dev","Front End Dev", "Backend Dev","Designer","Android Dev","Algorithms"]
+    
+    
+    
+    var textArr = ["Wow, he is great!", "I love him!", "He is a great hacker!", "I want to hack with him!"]
+    var authorArr = ["David Sun", "Pranav M", "Karan M", "Anish M"]
 
     @IBOutlet var coverPic: UIImageView!
     @IBOutlet var profilePic: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let userImageFile = PFUser.currentUser()!["profilepic"] as! PFFile
+      
         userImageFile.getDataInBackgroundWithBlock {
             (imageData: NSData?, error: NSError?) -> Void in
             if error == nil {
@@ -32,6 +40,9 @@ class PublicProfileController: UIViewController, UICollectionViewDataSource, UIC
                 println(error)
             }
         }
+        
+        
+        
         
         self.detailsCollection.dataSource = self
         self.detailsCollection.delegate = self
@@ -51,8 +62,10 @@ class PublicProfileController: UIViewController, UICollectionViewDataSource, UIC
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
-        return cell as! UICollectionViewCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as!PublicTextCollectionViewCell
+        cell.textMessage.text = textArr[indexPath.row]
+        cell.textAuthor.text = authorArr[indexPath.row]
+        return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
