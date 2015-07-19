@@ -49,6 +49,20 @@ class hackViewController: UIViewController {
     }
     
     
+    @IBAction func Going(sender: AnyObject) {
+        PFUser.currentUser()!["attending"] = hackId
+        PFUser.currentUser()!.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                // The object has been saved.
+                let viewControllers: [UIViewController] = self.navigationController!.viewControllers as! [UIViewController];
+                self.navigationController?.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+            } else {
+                ProgressHUD.showError("Problem Connecting!")
+                // There was a problem, check error.description
+            }
+        }
+    }
     
     func setUpProfile(){
         file.getDataInBackgroundWithBlock {

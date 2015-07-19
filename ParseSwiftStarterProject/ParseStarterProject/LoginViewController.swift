@@ -27,7 +27,11 @@ class LoginViewController: UIViewController {
             if user != nil {
                 
                 ProgressHUD.showSuccess("Login is Valid!")
-                self.performSegueWithIdentifier("loginisgood", sender: nil)
+                if PFUser.currentUser()!["attending"] != nil {
+                    self.performSegueWithIdentifier("hack", sender: self)
+                }else{
+                    self.performSegueWithIdentifier("loginisgood", sender: self)
+                }
             } else {
                 ProgressHUD.showError("Login Invalid.")
             }

@@ -1,5 +1,0 @@
-version: "Apple Swift version 1.2 (swiftlang-602.0.53.1 clang-602.0.53)"
-options: "cc9ea508033e564efa25103278beb222"
-inputs: 
-- "/Users/duffelbag/Downloads/parse-starter-project-1.7.5 (1)/ParseSwiftStarterProject/ParseStarterProject/ViewController.swift"
-- "/Users/duffelbag/Downloads/parse-starter-project-1.7.5 (1)/ParseSwiftStarterProject/ParseStarterProject/AppDelegate.swift"

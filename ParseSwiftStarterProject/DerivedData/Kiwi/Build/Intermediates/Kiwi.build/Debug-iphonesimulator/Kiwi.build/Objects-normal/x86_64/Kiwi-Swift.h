@@ -114,6 +114,7 @@ SWIFT_CLASS("_TtC4Kiwi21ExploreViewController")
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified update;
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified joinButton;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
 - (IBAction)joinButtonPressed:(id __nonnull)sender;
 - (IBAction)exploreButtonPressed:(id __nonnull)sender;
 - (void)didReceiveMemoryWarning;
@@ -126,6 +127,7 @@ SWIFT_CLASS("_TtC4Kiwi21ExploreViewController")
 
 SWIFT_CLASS("_TtC4Kiwi22HackCollectionViewCell")
 @interface HackCollectionViewCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified location;
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified name;
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified date;
 @property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified image;
@@ -133,14 +135,25 @@ SWIFT_CLASS("_TtC4Kiwi22HackCollectionViewCell")
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSMutableArray;
+@class PFFile;
 @class UICollectionView;
 @class NSIndexPath;
 @class UICollectionViewLayout;
+@class UIStoryboardSegue;
 
 SWIFT_CLASS("_TtC4Kiwi25HackexploreViewController")
 @interface HackexploreViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified searchButton;
+@property (nonatomic) BOOL search;
+@property (nonatomic) NSMutableArray * __nonnull arr;
+@property (nonatomic, copy) NSString * __nonnull name;
+@property (nonatomic) PFFile * __nonnull file;
+@property (nonatomic) NSInteger hours;
 @property (nonatomic, weak) IBOutlet UICollectionView * __null_unspecified collectView;
+@property (nonatomic, copy) NSString * __nonnull goto;
 - (void)viewDidLoad;
+- (IBAction)search:(id __nonnull)sender;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
 - (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
@@ -149,6 +162,7 @@ SWIFT_CLASS("_TtC4Kiwi25HackexploreViewController")
 - (UIEdgeInsets)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
 - (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
 - (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
+- (void)prepareForSegue:(UIStoryboardSegue * __nonnull)segue sender:(id __nullable)sender;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -228,6 +242,32 @@ SWIFT_CLASS("_TtC4Kiwi13JiroTextField")
 @end
 
 
+SWIFT_CLASS("_TtC4Kiwi26JoinTeamCollectionViewCell")
+@interface JoinTeamCollectionViewCell : UICollectionViewCell
+@property (nonatomic) IBOutlet UILabel * __null_unspecified skills;
+@property (nonatomic) IBOutlet UILabel * __null_unspecified name;
+@property (nonatomic) IBOutlet UIImageView * __null_unspecified profilePic;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi22JoinTeamViewController")
+@interface JoinTeamViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
+@property (nonatomic) IBOutlet UIButton * __null_unspecified requestToJoinButton;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)collectionView:(UICollectionView * __nonnull)collectionView didDeselectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
+- (UIEdgeInsets)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC4Kiwi14KaedeTextField")
 @interface KaedeTextField : TextFieldEffects
 @property (nonatomic) UIColor * __nullable placeholderColor;
@@ -290,6 +330,80 @@ SWIFT_CLASS("_TtC4Kiwi15MinoruTextField")
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIScrollView;
+
+SWIFT_CLASS("_TtC4Kiwi17ProfileController")
+@interface ProfileController : UIViewController
+@property (nonatomic, weak) IBOutlet UIView * __null_unspecified container;
+@property (nonatomic, weak) IBOutlet UIScrollView * __null_unspecified scrollView;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIPickerView;
+@class UIActionSheet;
+@class UIImagePickerController;
+@class UIImage;
+
+SWIFT_CLASS("_TtC4Kiwi21ProfileViewController")
+@interface ProfileViewController : UIViewController <UIImagePickerControllerDelegate, UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@property (nonatomic, weak) IBOutlet IsaoTextField * __null_unspecified occupation;
+@property (nonatomic, weak) IBOutlet IsaoTextField * __null_unspecified fullName;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified skil;
+@property (nonatomic) IBOutlet UIImageView * __null_unspecified profilePic;
+@property (nonatomic, copy) NSArray * __nonnull skills;
+@property (nonatomic, copy) NSString * __nonnull skillToAdd;
+@property (nonatomic) NSMutableArray * __nonnull skillArray;
+@property (nonatomic) IBOutlet UIPickerView * __null_unspecified skillPicker;
+@property (nonatomic) IBOutlet UIButton * __null_unspecified deleteButton;
+- (void)viewDidLoad;
+- (IBAction)saveData:(id __nonnull)sender;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)loadStuff;
+- (IBAction)changeProPic:(id __nonnull)sender;
+- (void)actionSheet:(UIActionSheet * __nonnull)myActionSheet clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (IBAction)changeCovPic:(id __nonnull)sender;
+- (void)imagePickerController:(UIImagePickerController * __nonnull)picker didFinishPickingImage:(UIImage * __null_unspecified)image editingInfo:(NSDictionary * __null_unspecified)editingInfo;
+- (void)didReceiveMemoryWarning;
+- (IBAction)deleteButtonPressed;
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView * __nonnull)pickerView;
+- (NSInteger)pickerView:(UIPickerView * __nonnull)pickerView numberOfRowsInComponent:(NSInteger)component;
+- (NSString * __null_unspecified)pickerView:(UIPickerView * __nonnull)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
+- (void)pickerView:(UIPickerView * __nonnull)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi33SearchCandidateCollectionViewCell")
+@interface SearchCandidateCollectionViewCell : UICollectionViewCell
+@property (nonatomic) IBOutlet UILabel * __null_unspecified topSkill;
+@property (nonatomic) IBOutlet UILabel * __null_unspecified skills;
+@property (nonatomic) IBOutlet UILabel * __null_unspecified name;
+@property (nonatomic) IBOutlet UIImageView * __null_unspecified profilePic;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi20SearchViewController")
+@interface SearchViewController : UIViewController <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate>
+@property (nonatomic) IBOutlet UICollectionView * __null_unspecified searchCollectionView;
+@property (nonatomic) IBOutlet IsaoTextField * __null_unspecified searchTextField;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)collectionView:(UICollectionView * __nonnull)collectionView didDeselectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
+- (UIEdgeInsets)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC4Kiwi20SignInViewController")
 @interface SignInViewController : UIViewController
@@ -330,6 +444,44 @@ SWIFT_CLASS("_TtC4Kiwi13YokoTextField")
 - (CGRect)textRectForBounds:(CGRect)bounds;
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi18hackViewController")
+@interface hackViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified url;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified date;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified address;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified team;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified attending;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified Hours;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified name;
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified picture;
+@property (nonatomic, copy) NSString * __nonnull hackId;
+@property (nonatomic) PFFile * __nonnull file;
+@property (nonatomic, copy) NSString * __nonnull names;
+@property (nonatomic, copy) NSString * __nonnull Hour;
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified GoingAction;
+- (void)viewDidAppear:(BOOL)animated;
+- (IBAction)Going:(id __nonnull)sender;
+- (void)setUpProfile;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi18teamViewController")
+@interface teamViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified Create;
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified team;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified name;
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified profile;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)loadHack;
+- (void)didReceiveMemoryWarning;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 

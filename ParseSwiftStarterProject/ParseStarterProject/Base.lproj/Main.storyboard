@@ -678,6 +678,21 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFn-VM-qfT">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="175" y="386" width="51" height="34"/>
+                                </variation>
+                                <connections>
+                                    <action selector="login:" destination="zxL-c5-jYd" eventType="touchUpInside" id="H4G-Lx-tlG"/>
+                                    <action selector="signIn:" destination="iEp-rg-9Zr" eventType="touchUpInside" id="aLP-uj-GTY"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="93s-qf-uzn" customClass="IsaoTextField" customModule="Kiwi" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
@@ -712,21 +727,6 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFn-VM-qfT">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Log In">
-                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="175" y="386" width="51" height="34"/>
-                                </variation>
-                                <connections>
-                                    <action selector="login:" destination="zxL-c5-jYd" eventType="touchUpInside" id="H4G-Lx-tlG"/>
-                                    <action selector="signIn:" destination="iEp-rg-9Zr" eventType="touchUpInside" id="aLP-uj-GTY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.55857010920000005" green="0.71420668050000002" blue="0.85770797730000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -746,8 +746,8 @@
                                 <exclude reference="ZLl-Z5-l8M"/>
                                 <exclude reference="dTj-Or-avG"/>
                                 <exclude reference="l6O-XS-jeh"/>
-                                <exclude reference="93s-qf-uzn"/>
                                 <exclude reference="dFn-VM-qfT"/>
+                                <exclude reference="93s-qf-uzn"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="R66-R8-vdB"/>
@@ -767,8 +767,8 @@
                                 <include reference="ZLl-Z5-l8M"/>
                                 <include reference="dTj-Or-avG"/>
                                 <include reference="l6O-XS-jeh"/>
-                                <include reference="93s-qf-uzn"/>
                                 <include reference="dFn-VM-qfT"/>
+                                <include reference="93s-qf-uzn"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="R66-R8-vdB"/>
@@ -789,11 +789,105 @@
                         <outlet property="password" destination="93s-qf-uzn" id="c9O-ty-4WN"/>
                         <outlet property="username" destination="l6O-XS-jeh" id="5YK-LD-Xwc"/>
                         <segue destination="lzQ-Sb-Ep3" kind="push" identifier="logingood" id="cPw-3F-2WA"/>
+                        <segue destination="Y0f-sZ-ZhW" kind="push" identifier="hack" id="wWs-QX-AyM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKT-T7-iOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1015.5" y="-264"/>
+        </scene>
+        <!--Team View Controller-->
+        <scene sceneID="oYU-eM-Fek">
+            <objects>
+                <viewController id="Y0f-sZ-ZhW" customClass="teamViewController" customModule="Kiwi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="109-Ci-end"/>
+                        <viewControllerLayoutGuide type="bottom" id="X61-GM-656"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HaR-Ax-QJR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are going to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zn3-1r-Tle">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="0.85770797730000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="95" y="87" width="210" height="29"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vR-Lx-zCY">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="0.85770797730000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="57" y="270" width="287" height="41"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6t-zJ-FRS">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Create a team">
+                                    <color key="titleColor" red="1" green="1" blue="0.85770797730000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="108" y="429" width="184" height="50"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2T-ce-V5f">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Join a team">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="108" y="338" width="184" height="50"/>
+                                </variation>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VJL-5s-ZVA">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="136" y="124" width="128" height="128"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.55857010920000005" green="0.71420668050000002" blue="0.85770797730000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="zn3-1r-Tle"/>
+                                <exclude reference="6vR-Lx-zCY"/>
+                                <exclude reference="x6t-zJ-FRS"/>
+                                <exclude reference="r2T-ce-V5f"/>
+                                <exclude reference="VJL-5s-ZVA"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="zn3-1r-Tle"/>
+                                <include reference="6vR-Lx-zCY"/>
+                                <include reference="x6t-zJ-FRS"/>
+                                <include reference="r2T-ce-V5f"/>
+                                <include reference="VJL-5s-ZVA"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="kWy-BZ-ybf">
+                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="kqI-NI-UY4"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="Create" destination="x6t-zJ-FRS" id="tI1-WR-KJQ"/>
+                        <outlet property="name" destination="6vR-Lx-zCY" id="XFY-tz-BNp"/>
+                        <outlet property="profile" destination="VJL-5s-ZVA" id="bco-tP-g8T"/>
+                        <outlet property="team" destination="r2T-ce-V5f" id="VDo-pk-FHd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nfk-yx-l4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1015.5" y="434.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JgR-hD-Oqd">
@@ -1024,6 +1118,7 @@
                     <connections>
                         <outlet property="joinButton" destination="ftO-E3-R2g" id="N0X-09-wjt"/>
                         <outlet property="update" destination="v7C-oq-mEi" id="wpi-A3-JQv"/>
+                        <segue destination="Y0f-sZ-ZhW" kind="push" identifier="hack" id="wbZ-sl-Yes"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQ2-NW-ctR" sceneMemberID="firstResponder"/>
@@ -1329,6 +1424,9 @@
                                 <state key="normal" title="I'm Going">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Going:" destination="f7g-cB-5i3" eventType="touchUpInside" id="tFk-Fb-zzc"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6e-dR-7th">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1616,6 +1714,7 @@
         <image name="kiwi blank" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wWs-QX-AyM"/>
         <segue reference="cPw-3F-2WA"/>
     </inferredMetricsTieBreakers>
 </document>

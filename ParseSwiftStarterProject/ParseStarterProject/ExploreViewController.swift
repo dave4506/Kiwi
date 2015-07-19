@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ExploreViewController: UIViewController {
 
@@ -24,6 +25,11 @@ class ExploreViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(animated: Bool) {
+        if PFUser.currentUser()!["attending"] != nil {
+            self.performSegueWithIdentifier("hack", sender: self)
+        }
     }
     @IBAction func joinButtonPressed(sender: AnyObject) {
         
