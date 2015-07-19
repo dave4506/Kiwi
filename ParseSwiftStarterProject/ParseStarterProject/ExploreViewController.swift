@@ -29,7 +29,9 @@ class ExploreViewController: UIViewController {
         
     }
     @IBAction func exploreButtonPressed(sender: AnyObject) {
-        
+        let main = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = main.instantiateViewControllerWithIdentifier("navCon") as! UINavigationController
+        self.showViewController(vc, sender: self)
     }
 
     override func didReceiveMemoryWarning() {
