@@ -27,6 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Enable storing and querying data from Local Datastore. 
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
+        
+        //var storyboard = UIStoryboard(name: "Panic", bundle: nil)
+        let main = UIStoryboard(name: "Panic", bundle: nil)
+        let vc = main.instantiateInitialViewController() as! UIViewController
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+        
         Parse.enableLocalDatastore()
 
         // ****************************************************************************

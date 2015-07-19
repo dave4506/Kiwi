@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ofB-Wy-09b">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="qGz-CB-JKs">
+            <objects>
+                <navigationController id="ofB-Wy-09b" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jCn-04-2Re">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="j49-PO-5ov" kind="relationship" relationship="rootViewController" id="eFm-QJ-RAZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCj-Ff-4Rq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-360" y="285.75"/>
+        </scene>
+        <!--Panic View Controller-->
+        <scene sceneID="T31-by-Z23">
+            <objects>
+                <viewController id="j49-PO-5ov" customClass="PanicViewController" customModule="Kiwi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IdG-Ud-HS9"/>
+                        <viewControllerLayoutGuide type="bottom" id="yFY-A0-Ifq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0fs-M4-KIT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwu-ma-JqY">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="6Kj-2F-Lrh"/>
+                                    <constraint firstAttribute="height" constant="260" id="evD-3Q-R52"/>
+                                </constraints>
+                                <state key="normal" title="PANIC!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6Kj-2F-Lrh"/>
+                                        <exclude reference="evD-3Q-R52"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="6Kj-2F-Lrh"/>
+                                        <include reference="evD-3Q-R52"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="XQ1-gy-Fyj" kind="push" id="mm7-Gl-LBO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.45423005760000001" blue="0.79851973679999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wwu-ma-JqY" firstAttribute="centerX" secondItem="0fs-M4-KIT" secondAttribute="centerX" id="l33-5o-vKw"/>
+                            <constraint firstItem="Wwu-ma-JqY" firstAttribute="top" secondItem="IdG-Ud-HS9" secondAttribute="bottom" constant="206" id="zRh-MA-RcD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Wwu-ma-JqY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="l33-5o-vKw"/>
+                                <exclude reference="zRh-MA-RcD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Wwu-ma-JqY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="l33-5o-vKw"/>
+                                <include reference="zRh-MA-RcD"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="YVY-bZ-5hk"/>
+                    <connections>
+                        <outlet property="panicButton" destination="Wwu-ma-JqY" id="Ybe-l9-WtM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yV-9W-v8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="405" y="271.5"/>
+        </scene>
+        <!--Panic Detail View Controller-->
+        <scene sceneID="dje-na-1Ef">
+            <objects>
+                <viewController id="XQ1-gy-Fyj" customClass="PanicDetailViewController" customModule="Kiwi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Nd-sb-tPa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uyy-tO-c0F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j2f-aw-Wtc">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a description of the panic." translatesAutoresizingMaskIntoConstraints="NO" id="kag-x9-oCt">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.5225123355421053" blue="0.79851973679999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="9Ta-pt-vEx"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9Ta-pt-vEx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="9Ta-pt-vEx"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W24-9V-HPX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="PANIC!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="panicButtonPressed" destination="XQ1-gy-Fyj" eventType="touchUpInside" id="625-q4-NdL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.45423005760000001" blue="0.79851973679999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kag-x9-oCt" firstAttribute="top" secondItem="2Nd-sb-tPa" secondAttribute="bottom" constant="42" id="4Rd-yo-fkj"/>
+                            <constraint firstItem="kag-x9-oCt" firstAttribute="leading" secondItem="j2f-aw-Wtc" secondAttribute="leadingMargin" constant="9" id="7s5-iw-9xi"/>
+                            <constraint firstItem="W24-9V-HPX" firstAttribute="top" secondItem="kag-x9-oCt" secondAttribute="bottom" constant="37" id="a3U-4k-ly0"/>
+                            <constraint firstItem="W24-9V-HPX" firstAttribute="trailing" secondItem="kag-x9-oCt" secondAttribute="trailing" id="bzo-T1-Z67"/>
+                            <constraint firstItem="kag-x9-oCt" firstAttribute="centerX" secondItem="j2f-aw-Wtc" secondAttribute="centerX" id="ej3-k6-evf"/>
+                            <constraint firstItem="W24-9V-HPX" firstAttribute="leading" secondItem="kag-x9-oCt" secondAttribute="leading" id="jve-na-2NO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="kag-x9-oCt"/>
+                                <exclude reference="W24-9V-HPX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4Rd-yo-fkj"/>
+                                <exclude reference="7s5-iw-9xi"/>
+                                <exclude reference="ej3-k6-evf"/>
+                                <exclude reference="a3U-4k-ly0"/>
+                                <exclude reference="bzo-T1-Z67"/>
+                                <exclude reference="jve-na-2NO"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="kag-x9-oCt"/>
+                                <include reference="W24-9V-HPX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4Rd-yo-fkj"/>
+                                <include reference="7s5-iw-9xi"/>
+                                <include reference="ej3-k6-evf"/>
+                                <include reference="a3U-4k-ly0"/>
+                                <include reference="bzo-T1-Z67"/>
+                                <include reference="jve-na-2NO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="M3M-NU-Wk6"/>
+                    <connections>
+                        <outlet property="panicButton" destination="W24-9V-HPX" id="BFw-U4-Jv5"/>
+                        <outlet property="panicDetail" destination="kag-x9-oCt" id="QUz-CU-lPU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IgW-vW-Xdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209" y="285.75"/>
+        </scene>
+    </scenes>
+</document>
