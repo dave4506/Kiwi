@@ -1,5 +1,5 @@
 //
-//  SearchCandidateCollectionViewCell.swift
+//  JoinTeamCollectionViewCell.swift
 //  Kiwi
 //
 //  Created by Karan Mehta on 7/19/15.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class SearchCandidateCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet var topSkill: UILabel!
+class JoinTeamCollectionViewCell: UICollectionViewCell {
     @IBOutlet var skills: UILabel!
     @IBOutlet var name: UILabel!
     @IBOutlet var profilePic: UIImageView!

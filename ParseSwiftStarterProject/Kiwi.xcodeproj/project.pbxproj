@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		077AE1DE1B5B4E3F005AB621 /* ExploreTStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077AE1DD1B5B4E3F005AB621 /* ExploreTStoryBoard.storyboard */; };
-		077AE1E01B5B5B3F005AB621 /* teamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AE1DF1B5B5B3F005AB621 /* teamSearchViewController.swift */; };
 		077AE1E21B5B6A01005AB621 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077AE1E11B5B6A01005AB621 /* Images.xcassets */; };
-		077AE1E41B5B72B6005AB621 /* createTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AE1E31B5B72B6005AB621 /* createTeamViewController.swift */; };
-		077AE1E61B5B79BD005AB621 /* skillViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AE1E51B5B79BD005AB621 /* skillViewCell.swift */; };
 		07FCAA2F1B5AFC9600102155 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCAA251B5AFC9600102155 /* HoshiTextField.swift */; };
 		07FCAA301B5AFC9600102155 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07FCAA261B5AFC9600102155 /* Info.plist */; };
 		07FCAA311B5AFC9600102155 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCAA271B5AFC9600102155 /* IsaoTextField.swift */; };
@@ -55,14 +51,12 @@
 		9E7F23381B5BA39A00E8AC10 /* TeamPeople.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E7F23371B5BA39A00E8AC10 /* TeamPeople.storyboard */; };
 		9E7F233A1B5BA7F000E8AC10 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F23391B5BA7F000E8AC10 /* SearchViewController.swift */; };
 		9E7F233C1B5BB07600E8AC10 /* SearchCandidateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F233B1B5BB07600E8AC10 /* SearchCandidateCollectionViewCell.swift */; };
+		9E7F233E1B5BD3EF00E8AC10 /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F233D1B5BD3EF00E8AC10 /* JoinTeamViewController.swift */; };
+		9E7F23401B5BD81900E8AC10 /* JoinTeamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7F233F1B5BD81900E8AC10 /* JoinTeamCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		077AE1DD1B5B4E3F005AB621 /* ExploreTStoryBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExploreTStoryBoard.storyboard; sourceTree = "<group>"; };
-		077AE1DF1B5B5B3F005AB621 /* teamSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = teamSearchViewController.swift; sourceTree = "<group>"; };
 		077AE1E11B5B6A01005AB621 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		077AE1E31B5B72B6005AB621 /* createTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createTeamViewController.swift; sourceTree = "<group>"; };
-		077AE1E51B5B79BD005AB621 /* skillViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = skillViewCell.swift; sourceTree = "<group>"; };
 		07FCAA251B5AFC9600102155 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
 		07FCAA261B5AFC9600102155 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FCAA271B5AFC9600102155 /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
@@ -128,6 +122,8 @@
 		9E7F23371B5BA39A00E8AC10 /* TeamPeople.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TeamPeople.storyboard; path = ../TeamPeople.storyboard; sourceTree = "<group>"; };
 		9E7F23391B5BA7F000E8AC10 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ../SearchViewController.swift; sourceTree = "<group>"; };
 		9E7F233B1B5BB07600E8AC10 /* SearchCandidateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCandidateCollectionViewCell.swift; path = ../SearchCandidateCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E7F233D1B5BD3EF00E8AC10 /* JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinTeamViewController.swift; path = ../JoinTeamViewController.swift; sourceTree = "<group>"; };
+		9E7F233F1B5BD81900E8AC10 /* JoinTeamCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinTeamCollectionViewCell.swift; path = ../JoinTeamCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,16 +185,14 @@
 			children = (
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
 				9E7F233B1B5BB07600E8AC10 /* SearchCandidateCollectionViewCell.swift */,
+				9E7F233F1B5BD81900E8AC10 /* JoinTeamCollectionViewCell.swift */,
+				9E7F233D1B5BD3EF00E8AC10 /* JoinTeamViewController.swift */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				81EA501B1B5B19B700793316 /* LoginViewController.swift */,
 				9E7F23391B5BA7F000E8AC10 /* SearchViewController.swift */,
 				9E7F23371B5BA39A00E8AC10 /* TeamPeople.storyboard */,
 				81EA4FDB1B5B0A6900793316 /* SignInViewController.swift */,
-				077AE1DF1B5B5B3F005AB621 /* teamSearchViewController.swift */,
-				077AE1E31B5B72B6005AB621 /* createTeamViewController.swift */,
 				81BA814E1A49DA1800E65899 /* Main.storyboard */,
-				077AE1DD1B5B4E3F005AB621 /* ExploreTStoryBoard.storyboard */,
-				077AE1E51B5B79BD005AB621 /* skillViewCell.swift */,
 				077AE1E11B5B6A01005AB621 /* Images.xcassets */,
 				81BA81481A49DA1800E65899 /* Supporting Files */,
 			);
@@ -398,7 +392,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				81BA81501A49DA1800E65899 /* Main.storyboard in Resources */,
-				077AE1DE1B5B4E3F005AB621 /* ExploreTStoryBoard.storyboard in Resources */,
 				9E7F23381B5BA39A00E8AC10 /* TeamPeople.storyboard in Resources */,
 				81EA500F1B5B0F5000793316 /* IQKeyboardManager.bundle in Resources */,
 				077AE1E21B5B6A01005AB621 /* Images.xcassets in Resources */,
@@ -432,14 +425,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				81EA501C1B5B19B700793316 /* LoginViewController.swift in Sources */,
-				077AE1E01B5B5B3F005AB621 /* teamSearchViewController.swift in Sources */,
 				81EA50071B5B0F5000793316 /* IQKeyboardManager.m in Sources */,
 				07FCAA331B5AFC9600102155 /* KaedeTextField.swift in Sources */,
+				9E7F23401B5BD81900E8AC10 /* JoinTeamCollectionViewCell.swift in Sources */,
 				81EA50151B5B142100793316 /* ProgressHUD.m in Sources */,
 				81EA500B1B5B0F5000793316 /* IQBarButtonItem.m in Sources */,
 				07FCAA371B5AFC9600102155 /* YokoTextField.swift in Sources */,
 				9E7F233A1B5BA7F000E8AC10 /* SearchViewController.swift in Sources */,
-				077AE1E41B5B72B6005AB621 /* createTeamViewController.swift in Sources */,
 				07FCAA2F1B5AFC9600102155 /* HoshiTextField.swift in Sources */,
 				81EA50021B5B0F5000793316 /* IQNSArray+Sort.m in Sources */,
 				81EA500E1B5B0F5000793316 /* IQUIView+IQKeyboardToolbar.m in Sources */,
@@ -455,13 +447,13 @@
 				81EA50051B5B0F5000793316 /* IQUIViewController+Additions.m in Sources */,
 				81EA500A1B5B0F5000793316 /* IQTextView.m in Sources */,
 				81EA4FDC1B5B0A6900793316 /* SignInViewController.swift in Sources */,
+				9E7F233E1B5BD3EF00E8AC10 /* JoinTeamViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 				07FCAA361B5AFC9600102155 /* TextFieldsEffects.swift in Sources */,
 				81EA50181B5B15FD00793316 /* camera.m in Sources */,
 				07FCAA311B5AFC9600102155 /* IsaoTextField.swift in Sources */,
 				9E7F233C1B5BB07600E8AC10 /* SearchCandidateCollectionViewCell.swift in Sources */,
 				81EA50091B5B0F5000793316 /* IQSegmentedNextPrevious.m in Sources */,
-				077AE1E61B5B79BD005AB621 /* skillViewCell.swift in Sources */,
 				81EA50081B5B0F5000793316 /* IQKeyboardReturnKeyHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
