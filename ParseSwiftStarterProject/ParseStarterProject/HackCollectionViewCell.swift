@@ -9,13 +9,9 @@
 import UIKit
 
 class HackCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var sheetColor: UIImageView!
-    @IBOutlet weak var backPic: UIImageView!
-    @IBOutlet weak var three: UILabel!
-    @IBOutlet weak var two: UILabel!
-    @IBOutlet weak var one: UILabel!
-    @IBOutlet weak var oneday: UILabel!
-    @IBOutlet weak var teamPeople: UILabel!
-    
+
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var image: UIImageView!
 }

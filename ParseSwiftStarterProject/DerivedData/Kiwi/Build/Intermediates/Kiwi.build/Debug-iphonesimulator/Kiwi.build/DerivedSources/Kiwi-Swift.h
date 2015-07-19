@@ -84,6 +84,7 @@ typedef struct _NSZone NSZone;
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -108,12 +109,261 @@ SWIFT_CLASS("_TtC4Kiwi11AppDelegate")
 @class NSBundle;
 @class NSCoder;
 
+SWIFT_CLASS("_TtC4Kiwi21ExploreViewController")
+@interface ExploreViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified update;
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified joinButton;
+- (void)viewDidLoad;
+- (IBAction)joinButtonPressed:(id __nonnull)sender;
+- (IBAction)exploreButtonPressed:(id __nonnull)sender;
+- (void)didReceiveMemoryWarning;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UILabel;
+@class UIImageView;
+
+SWIFT_CLASS("_TtC4Kiwi22HackCollectionViewCell")
+@interface HackCollectionViewCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified location;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified name;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified date;
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified image;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSMutableArray;
+@class PFFile;
+@class UICollectionView;
+@class NSIndexPath;
+@class UICollectionViewLayout;
+@class UIStoryboardSegue;
+
+SWIFT_CLASS("_TtC4Kiwi25HackexploreViewController")
+@interface HackexploreViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified searchButton;
+@property (nonatomic) BOOL search;
+@property (nonatomic) NSMutableArray * __nonnull arr;
+@property (nonatomic, copy) NSString * __nonnull name;
+@property (nonatomic) PFFile * __nonnull file;
+@property (nonatomic) NSInteger hours;
+@property (nonatomic, weak) IBOutlet UICollectionView * __null_unspecified collectView;
+@property (nonatomic, copy) NSString * __nonnull goto;
+- (void)viewDidLoad;
+- (IBAction)search:(id __nonnull)sender;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)collectionView:(UICollectionView * __nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)collectionView:(UICollectionView * __nonnull)collectionView didDeselectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (UIEdgeInsets)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView * __nonnull)collectionView layout:(UICollectionViewLayout * __nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
+- (void)prepareForSegue:(UIStoryboardSegue * __nonnull)segue sender:(id __nullable)sender;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIView;
+
+SWIFT_CLASS("_TtC4Kiwi16TextFieldEffects")
+@interface TextFieldEffects : UITextField
+@property (nonatomic, readonly) UILabel * __nonnull placeholderLabel;
+- (void)animateViewsForTextEntry;
+- (void)animateViewsForTextDisplay;
+- (void)drawViewsForRect:(CGRect)rect;
+- (void)updateViewsForBoundsChange:(CGRect)bounds;
+- (void)prepareForInterfaceBuilder;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)awakeFromNib;
+- (void)drawRect:(CGRect)rect;
+- (void)drawPlaceholderInRect:(CGRect)rect;
+- (void)willMoveToSuperview:(UIView * __null_unspecified)newSuperview;
+- (void)textFieldDidBeginEditing;
+- (void)textFieldDidEndEditing;
+@end
+
+@class UIColor;
+
+SWIFT_CLASS("_TtC4Kiwi14HoshiTextField")
+@interface HoshiTextField : TextFieldEffects
+@property (nonatomic) UIColor * __nullable borderInactiveColor;
+@property (nonatomic) UIColor * __nullable borderActiveColor;
+@property (nonatomic) UIColor * __nullable placeholderColor;
+@property (nonatomic, copy, getter=placeholder, setter=setPlaceholder:) NSString * __nullable placeholder;
+@property (nonatomic, getter=bounds, setter=setBounds:) CGRect bounds;
+- (void)drawViewsForRect:(CGRect)rect;
+- (void)animateViewsForTextEntry;
+- (void)animateViewsForTextDisplay;
+- (CGRect)editingRectForBounds:(CGRect)bounds;
+- (CGRect)textRectForBounds:(CGRect)bounds;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi13IsaoTextField")
+@interface IsaoTextField : TextFieldEffects
+@property (nonatomic) UIColor * __nullable inactiveColor;
+@property (nonatomic) UIColor * __nullable activeColor;
+@property (nonatomic, copy, getter=placeholder, setter=setPlaceholder:) NSString * __nullable placeholder;
+@property (nonatomic, getter=bounds, setter=setBounds:) CGRect bounds;
+- (void)drawViewsForRect:(CGRect)rect;
+- (void)animateViewsForTextEntry;
+- (void)animateViewsForTextDisplay;
+- (CGRect)editingRectForBounds:(CGRect)bounds;
+- (CGRect)textRectForBounds:(CGRect)bounds;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi13JiroTextField")
+@interface JiroTextField : TextFieldEffects
+@property (nonatomic) UIColor * __nullable borderColor;
+@property (nonatomic) UIColor * __nullable placeholderColor;
+@property (nonatomic, copy, getter=placeholder, setter=setPlaceholder:) NSString * __nullable placeholder;
+@property (nonatomic, getter=bounds, setter=setBounds:) CGRect bounds;
+- (void)drawViewsForRect:(CGRect)rect;
+- (void)animateViewsForTextEntry;
+- (void)animateViewsForTextDisplay;
+- (CGRect)editingRectForBounds:(CGRect)bounds;
+- (CGRect)textRectForBounds:(CGRect)bounds;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi14KaedeTextField")
+@interface KaedeTextField : TextFieldEffects
+@property (nonatomic) UIColor * __nullable placeholderColor;
+@property (nonatomic) UIColor * __nullable foregroundColor;
+@property (nonatomic, copy, getter=placeholder, setter=setPlaceholder:) NSString * __nullable placeholder;
+@property (nonatomic, getter=bounds, setter=setBounds:) CGRect bounds;
+- (void)drawViewsForRect:(CGRect)rect;
+- (void)animateViewsForTextEntry;
+- (void)animateViewsForTextDisplay;
+- (CGRect)editingRectForBounds:(CGRect)bounds;
+- (CGRect)textRectForBounds:(CGRect)bounds;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi19LoginViewController")
+@interface LoginViewController : UIViewController
+@property (nonatomic, weak) IBOutlet IsaoTextField * __null_unspecified password;
+@property (nonatomic, weak) IBOutlet IsaoTextField * __null_unspecified username;
+- (void)viewDidLoad;
+- (IBAction)login:(id __nonnull)sender;
+- (void)didReceiveMemoryWarning;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi15MadokaTextField")
+@interface MadokaTextField : TextFieldEffects
+@property (nonatomic) UIColor * __nullable placeholderColor;
+@property (nonatomic) UIColor * __nullable borderColor;
+@property (nonatomic, copy, getter=placeholder, setter=setPlaceholder:) NSString * __nullable placeholder;
+@property (nonatomic, getter=bounds, setter=setBounds:) CGRect bounds;
+- (void)drawViewsForRect:(CGRect)rect;
+- (void)animateViewsForTextEntry;
+- (void)animateViewsForTextDisplay;
+- (CGRect)editingRectForBounds:(CGRect)bounds;
+- (CGRect)textRectForBounds:(CGRect)bounds;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi15MinoruTextField")
+@interface MinoruTextField : TextFieldEffects
+@property (nonatomic) UIColor * __nullable placeholderColor;
+@property (nonatomic, getter=backgroundColor, setter=setBackgroundColor:) UIColor * __nullable backgroundColor;
+@property (nonatomic, copy, getter=placeholder, setter=setPlaceholder:) NSString * __nullable placeholder;
+@property (nonatomic, getter=bounds, setter=setBounds:) CGRect bounds;
+- (void)drawViewsForRect:(CGRect)rect;
+- (void)animateViewsForTextEntry;
+- (void)animateViewsForTextDisplay;
+- (CGRect)editingRectForBounds:(CGRect)bounds;
+- (CGRect)textRectForBounds:(CGRect)bounds;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi20SignInViewController")
+@interface SignInViewController : UIViewController
+@property (nonatomic, weak) IBOutlet IsaoTextField * __null_unspecified confirmTextField;
+@property (nonatomic, weak) IBOutlet IsaoTextField * __null_unspecified passwordTextField;
+@property (nonatomic, weak) IBOutlet IsaoTextField * __null_unspecified usernameTextField;
+@property (nonatomic, weak) IBOutlet IsaoTextField * __null_unspecified emailTextField;
+- (void)viewDidLoad;
+- (IBAction)signIn:(id __nonnull)sender;
+- (void)didReceiveMemoryWarning;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
 SWIFT_CLASS("_TtC4Kiwi14ViewController")
 @interface ViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified logIn;
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified signUp;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi13YokoTextField")
+@interface YokoTextField : TextFieldEffects
+@property (nonatomic, copy, getter=placeholder, setter=setPlaceholder:) NSString * __nullable placeholder;
+@property (nonatomic) UIColor * __nullable placeholderColor;
+@property (nonatomic) UIColor * __nonnull foregroundColor;
+@property (nonatomic, getter=bounds, setter=setBounds:) CGRect bounds;
+- (void)drawViewsForRect:(CGRect)rect;
+- (void)animateViewsForTextEntry;
+- (void)animateViewsForTextDisplay;
+- (CGRect)editingRectForBounds:(CGRect)bounds;
+- (CGRect)textRectForBounds:(CGRect)bounds;
+- (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC4Kiwi18hackViewController")
+@interface hackViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified url;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified date;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified address;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified team;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified attending;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified Hours;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified name;
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified picture;
+@property (nonatomic, copy) NSString * __nonnull hackId;
+@property (nonatomic) PFFile * __nonnull file;
+@property (nonatomic, copy) NSString * __nonnull names;
+@property (nonatomic, copy) NSString * __nonnull Hour;
+@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified GoingAction;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)setUpProfile;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0762A8B41B5BA80A003DD8EB /* hackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762A8B31B5BA80A003DD8EB /* hackViewController.swift */; };
 		07FCAA2F1B5AFC9600102155 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCAA251B5AFC9600102155 /* HoshiTextField.swift */; };
 		07FCAA301B5AFC9600102155 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07FCAA261B5AFC9600102155 /* Info.plist */; };
 		07FCAA311B5AFC9600102155 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FCAA271B5AFC9600102155 /* IsaoTextField.swift */; };
@@ -51,9 +52,6 @@
 		81EA50241B5B4D3F00793316 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EA50231B5B4D3F00793316 /* ExploreViewController.swift */; };
 		81EA50261B5B5F2300793316 /* HackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EA50251B5B5F2300793316 /* HackCollectionViewCell.swift */; };
 		81EA50281B5B609600793316 /* HackexploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EA50271B5B609600793316 /* HackexploreViewController.swift */; };
-		81EA50351B5B70D800793316 /* MosaicLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EA502C1B5B70D800793316 /* MosaicLayout.m */; };
-		81EA50361B5B70D800793316 /* MosaicData.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EA502F1B5B70D800793316 /* MosaicData.m */; };
-		81EA50371B5B70D800793316 /* MosaicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EA50341B5B70D800793316 /* MosaicCell.m */; };
 		81EA504D1B5B718F00793316 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EA503B1B5B718F00793316 /* AFHTTPClient.m */; };
 		81EA504E1B5B718F00793316 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EA503D1B5B718F00793316 /* AFHTTPRequestOperation.m */; };
 		81EA504F1B5B718F00793316 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EA503F1B5B718F00793316 /* AFImageRequestOperation.m */; };
@@ -66,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0762A8B31B5BA80A003DD8EB /* hackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hackViewController.swift; sourceTree = "<group>"; };
 		07FCAA251B5AFC9600102155 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
 		07FCAA261B5AFC9600102155 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FCAA271B5AFC9600102155 /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
@@ -132,13 +131,6 @@
 		81EA50231B5B4D3F00793316 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		81EA50251B5B5F2300793316 /* HackCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackCollectionViewCell.swift; sourceTree = "<group>"; };
 		81EA50271B5B609600793316 /* HackexploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackexploreViewController.swift; sourceTree = "<group>"; };
-		81EA502B1B5B70D800793316 /* MosaicLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicLayout.h; sourceTree = "<group>"; };
-		81EA502C1B5B70D800793316 /* MosaicLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicLayout.m; sourceTree = "<group>"; };
-		81EA502E1B5B70D800793316 /* MosaicData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicData.h; sourceTree = "<group>"; };
-		81EA502F1B5B70D800793316 /* MosaicData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicData.m; sourceTree = "<group>"; };
-		81EA50311B5B70D800793316 /* MosaicLayoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicLayoutDelegate.h; sourceTree = "<group>"; };
-		81EA50331B5B70D800793316 /* MosaicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicCell.h; sourceTree = "<group>"; };
-		81EA50341B5B70D800793316 /* MosaicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicCell.m; sourceTree = "<group>"; };
 		81EA503A1B5B718F00793316 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		81EA503B1B5B718F00793316 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		81EA503C1B5B718F00793316 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -224,6 +216,7 @@
 				81EA4FDB1B5B0A6900793316 /* SignInViewController.swift */,
 				81EA50271B5B609600793316 /* HackexploreViewController.swift */,
 				81EA50251B5B5F2300793316 /* HackCollectionViewCell.swift */,
+				0762A8B31B5BA80A003DD8EB /* hackViewController.swift */,
 				81BA814E1A49DA1800E65899 /* Main.storyboard */,
 				81BA81511A49DA1800E65899 /* Images.xcassets */,
 				81BA81481A49DA1800E65899 /* Supporting Files */,
@@ -246,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				81EA50391B5B718F00793316 /* AFNetworking */,
-				81EA50291B5B70D800793316 /* MosaicLayout */,
 				81EA50101B5B142100793316 /* ProgressHUD */,
 				81EA4FDD1B5B0F5000793316 /* IQKeyBoardManager */,
 				07FCAA241B5AFC9600102155 /* TextFieldEffects */,
@@ -364,52 +356,6 @@
 				81EA50131B5B142100793316 /* ProgressHUD.m */,
 			);
 			path = ProgressHUD;
-			sourceTree = "<group>";
-		};
-		81EA50291B5B70D800793316 /* MosaicLayout */ = {
-			isa = PBXGroup;
-			children = (
-				81EA502A1B5B70D800793316 /* Controllers */,
-				81EA502D1B5B70D800793316 /* Entities */,
-				81EA50301B5B70D800793316 /* Protocols */,
-				81EA50321B5B70D800793316 /* Views */,
-			);
-			path = MosaicLayout;
-			sourceTree = "<group>";
-		};
-		81EA502A1B5B70D800793316 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				81EA502B1B5B70D800793316 /* MosaicLayout.h */,
-				81EA502C1B5B70D800793316 /* MosaicLayout.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		81EA502D1B5B70D800793316 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				81EA502E1B5B70D800793316 /* MosaicData.h */,
-				81EA502F1B5B70D800793316 /* MosaicData.m */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		81EA50301B5B70D800793316 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				81EA50311B5B70D800793316 /* MosaicLayoutDelegate.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		81EA50321B5B70D800793316 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				81EA50331B5B70D800793316 /* MosaicCell.h */,
-				81EA50341B5B70D800793316 /* MosaicCell.m */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		81EA50391B5B718F00793316 /* AFNetworking */ = {
@@ -530,13 +476,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				81EA501C1B5B19B700793316 /* LoginViewController.swift in Sources */,
+				0762A8B41B5BA80A003DD8EB /* hackViewController.swift in Sources */,
 				81EA50071B5B0F5000793316 /* IQKeyboardManager.m in Sources */,
 				07FCAA331B5AFC9600102155 /* KaedeTextField.swift in Sources */,
 				81EA50151B5B142100793316 /* ProgressHUD.m in Sources */,
 				81EA50511B5B718F00793316 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				81EA500B1B5B0F5000793316 /* IQBarButtonItem.m in Sources */,
 				07FCAA371B5AFC9600102155 /* YokoTextField.swift in Sources */,
-				81EA50351B5B70D800793316 /* MosaicLayout.m in Sources */,
 				81EA50261B5B5F2300793316 /* HackCollectionViewCell.swift in Sources */,
 				07FCAA2F1B5AFC9600102155 /* HoshiTextField.swift in Sources */,
 				81EA50021B5B0F5000793316 /* IQNSArray+Sort.m in Sources */,
@@ -544,7 +490,6 @@
 				81EA504D1B5B718F00793316 /* AFHTTPClient.m in Sources */,
 				81EA50041B5B0F5000793316 /* IQUIView+Hierarchy.m in Sources */,
 				81EA50281B5B609600793316 /* HackexploreViewController.swift in Sources */,
-				81EA50371B5B70D800793316 /* MosaicCell.m in Sources */,
 				81EA50031B5B0F5000793316 /* IQUITextFieldView+Additions.m in Sources */,
 				07FCAA321B5AFC9600102155 /* JiroTextField.swift in Sources */,
 				81EA50241B5B4D3F00793316 /* ExploreViewController.swift in Sources */,
@@ -567,7 +512,6 @@
 				81EA50181B5B15FD00793316 /* camera.m in Sources */,
 				81EA50501B5B718F00793316 /* AFJSONRequestOperation.m in Sources */,
 				07FCAA311B5AFC9600102155 /* IsaoTextField.swift in Sources */,
-				81EA50361B5B70D800793316 /* MosaicData.m in Sources */,
 				81EA50091B5B0F5000793316 /* IQSegmentedNextPrevious.m in Sources */,
 				81EA50081B5B0F5000793316 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				81EA50521B5B718F00793316 /* AFPropertyListRequestOperation.m in Sources */,
