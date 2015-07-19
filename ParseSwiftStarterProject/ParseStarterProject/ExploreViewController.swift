@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  ExploreViewController.swift
 //  Kiwi
 //
 //  Created by Pranav Madanahalli on 7/18/15.
@@ -7,32 +7,31 @@
 //
 
 import UIKit
-import Parse
 
-class LoginViewController: UIViewController {
+class ExploreViewController: UIViewController {
 
-    @IBOutlet weak var password: IsaoTextField!
-    @IBOutlet weak var username: IsaoTextField!
+    @IBOutlet weak var update: UIButton!
+    @IBOutlet weak var joinButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.update.layer.cornerRadius = 27
+        self.update.layer.borderWidth = 0.5
+        self.update.layer.borderColor = UIColor.blueColor().CGColor!
+        
+        self.joinButton.layer.cornerRadius = 27
+        self.joinButton.layer.borderWidth = 0.5
+        self.joinButton.layer.borderColor = UIColor.blueColor().CGColor!
+        
 
         // Do any additional setup after loading the view.
     }
-
-    @IBAction func login(sender: AnyObject) {
-        ProgressHUD.show("Please Wait...", interaction: false)
+    @IBAction func joinButtonPressed(sender: AnyObject) {
         
-        PFUser.logInWithUsernameInBackground(username.text, password:password.text) {
-            (user: PFUser?, error: NSError?) -> Void in
-            if user != nil {
-                
-                ProgressHUD.showSuccess("Login is Valid!")
-                self.performSegueWithIdentifier("loginisgood", sender: nil)
-            } else {
-                ProgressHUD.showError("Login Invalid.")
-            }
-        }
     }
+    @IBAction func exploreButtonPressed(sender: AnyObject) {
+        
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
