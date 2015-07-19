@@ -1,5 +1,5 @@
 //
-//  JoinTeamViewController.swift
+//  TeamJoinViewController.swift
 //  Kiwi
 //
 //  Created by Karan Mehta on 7/19/15.
@@ -8,12 +8,14 @@
 
 import UIKit
 
-class JoinTeamViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate {
+class TeamJoinViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
 
-    @IBOutlet var requestToJoinButton: UIButton!
+    @IBOutlet var teamJoinCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestToJoinButton.layer.cornerRadius = 6
+        teamJoinCollectionView.dataSource = self
+        teamJoinCollectionView.delegate = self
+        
         // Do any additional setup after loading the view.
     }
 
@@ -22,21 +24,28 @@ class JoinTeamViewController: UIViewController, UICollectionViewDelegateFlowLayo
         // Dispose of any resources that can be recreated.
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return 4
-    }
     
-    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! SearchCandidateCollectionViewCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! TeamJoinCollectionViewCell
         cell.profilePic.image = UIImage(named: "kiwi blank")
         cell.profilePic.layer.cornerRadius = 45
         cell.name.text = "Karan Mehta"
         cell.skills.text = "iOS Dev"
         cell.profilePic.clipsToBounds = true
-        
+        cell.addButton.layer.cornerRadius = 12
+        cell.addButton.clipsToBounds = true
+
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        return 4
+    }
+    
+    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+
+    
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: false)
@@ -50,6 +59,7 @@ class JoinTeamViewController: UIViewController, UICollectionViewDelegateFlowLayo
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
+
     
 
     /*
