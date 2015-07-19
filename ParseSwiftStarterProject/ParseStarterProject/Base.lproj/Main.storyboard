@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oFM-06-1Gk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -787,6 +787,7 @@
                     <connections>
                         <outlet property="password" destination="93s-qf-uzn" id="c9O-ty-4WN"/>
                         <outlet property="username" destination="l6O-XS-jeh" id="5YK-LD-Xwc"/>
+                        <segue destination="lzQ-Sb-Ep3" kind="push" identifier="logingood" id="GBw-zW-rZx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKT-T7-iOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -811,10 +812,10 @@
             </objects>
             <point key="canvasLocation" x="-378" y="391.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Joinack Or Profile View Controller-->
         <scene sceneID="VS5-G5-18k">
             <objects>
-                <viewController id="lzQ-Sb-Ep3" customClass="ViewController" customModule="Kiwi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lzQ-Sb-Ep3" customClass="JoinackOrProfileViewController" customModule="Kiwi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OCr-zr-Hik"/>
                         <viewControllerLayoutGuide type="bottom" id="bkI-Kr-b0M"/>
@@ -833,7 +834,8 @@
                                         <exclude reference="h46-vC-Ncj"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="82" y="75" width="237" height="213"/>
                                     <mask key="constraints">
                                         <include reference="h46-vC-Ncj"/>
                                     </mask>
@@ -844,18 +846,27 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" red="0.97893931879999996" green="0.97893931879999996" blue="0.97893931879999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="135.5" y="321" width="130.5" height="30.5"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you are not in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjL-mM-2np">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" red="0.97893931879999996" green="0.97893931879999996" blue="0.97893931879999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="121" y="359.5" width="158" height="30.5"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a Hackathon!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-fm-Aam">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" red="0.97893931879999996" green="0.97893931879999996" blue="0.97893931879999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="123" y="398" width="154.5" height="30.5"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftO-E3-R2g">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -863,12 +874,18 @@
                                 <state key="normal" title="Join a Hack!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="150" y="490.5" width="100" height="33"/>
+                                </variation>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtU-WM-spc">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.97893931879999996" green="0.97893931879999996" blue="0.97893931879999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="193" y="539.5" width="15" height="19"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7C-oq-mEi">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -876,6 +893,12 @@
                                 <state key="normal" title="Update your Profile">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="122.5" y="587.5" width="156" height="33"/>
+                                </variation>
+                                <connections>
+                                    <action selector="editProfilePressed" destination="lzQ-Sb-Ep3" eventType="touchUpInside" id="H7Z-Fe-qE7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.71531904820000003" green="0.91737648140000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -968,10 +991,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="9Ld-Mh-Odb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQ2-NW-ctR" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360" y="-321"/>
+            <point key="canvasLocation" x="300" y="1062"/>
         </scene>
     </scenes>
     <resources>

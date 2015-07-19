@@ -28,15 +28,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
+        var barAppearance = UINavigationBar.appearance()
+        barAppearance.tintColor = UIColor.whiteColor()
+        barAppearance.barTintColor = UIColor(red: 74/255, green: 144/255, blue: 226/255, alpha: 1.0)
+        barAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
+        //var storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        //var initViewController = storyboard.instantiateInitialViewController()
+        //self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        //self.window?.rootViewController = initViewController as! UIViewController
         
-        
-        var storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        var initViewController = storyboard.instantiateInitialViewController()
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = initViewController as! UIViewController
-        
-        self.window?.makeKeyAndVisible()
+        //self.window?.makeKeyAndVisible()
         
         // Enable storing and querying data from Local Datastore. 
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.

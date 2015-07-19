@@ -9,17 +9,38 @@
 import UIKit
 import Parse
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,UIActionSheetDelegate{
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
 
-    @IBOutlet var coverPic:UIImageView!
-    @IBOutlet var profilePic:UIImageView!
+    @IBOutlet var profilePic: UIImageView!
+    var skills = ["None","iOS Dev", "Web Dev", "Full Stack Dev","Front End Dev", "Backend Dev","Designer","Android Dev","Algorithms"]
+    var skillToAdd = ""
+    @IBOutlet var skillPicker: UIPickerView!
+    @IBOutlet var occupationTextField: UITextView!
+    @IBOutlet var nameTextField: UITextView!
+    @IBOutlet var editButton: UIButton!
+    @IBOutlet var deleteButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var file: PFFile = PFUser.currentUser()!["profilepic"] as! PFFile;
-        file.getDataInBackgroundWithBlock {
-            (imageData: NSData?,error : NSError?) -> Void in
-            if let imageData = imageData{
-                self.profilePic.image = UIImage(data: imageData)
+        self.deleteButton.layer.cornerRadius = 6
+        self.editButton.layer.cornerRadius = 6
+        self.skillPicker.hidden = true
+        self.skillPicker.dataSource = self
+        self.skillPicker.delegate = self
+        
+        let userImageFile = PFUser.currentUser()!["profilepic"] as! PFFile
+        userImageFile.getDataInBackgroundWithBlock {
+            (imageData: NSData?, error: NSError?) -> Void in
+            if error == nil {
+                if let imageData = imageData {
+                    let image = UIImage(data:imageData)
+                    self.profilePic.image = image
+                    self.profilePic.layer.cornerRadius = self.profilePic.frame.height / 2
+                    self.profilePic.layer.borderColor = UIColor.whiteColor().CGColor
+                    self.profilePic.layer.borderWidth = 5
+                    self.profilePic.clipsToBounds = true
+                }
+            }else{
+                println(error)
             }
         }
 
@@ -45,7 +66,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         
-        self.profilePic.image = image;
+        //self.profilePic.image = image;
         var file = PFFile(name: "picture.jpeg", data: UIImageJPEGRepresentation(image, 0.6));
         var user = PFUser.currentUser()!
         user["profilepic"] = file;
@@ -64,7 +85,43 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func deleteButtonPressed() {
+        //delete account from parse
+        print("delete")
+    }
 
+    @IBAction func editButtonPressed() {
+        if(!self.nameTextField.editable){
+        self.editButton.setTitle("Done", forState: UIControlState.Normal)
+        self.nameTextField.editable = true
+        self.occupationTextField.editable = true
+        self.skillPicker.hidden = false
+        }
+        else{
+            self.editButton.setTitle("Edit", forState: UIControlState.Normal)
+            self.nameTextField.editable = false
+            self.occupationTextField.editable = false
+            self.skillPicker.hidden = true
+        }
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return skills.count
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return skills[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        skillToAdd = skills[row]
+        print(skillToAdd)
+    }
+    
     /*
     // MARK: - Navigation
 

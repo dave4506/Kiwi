@@ -27,7 +27,8 @@ class LoginViewController: UIViewController {
             if user != nil {
                 
                 ProgressHUD.showSuccess("Login is Valid!")
-                //self.performSegueWithIdentifier("logingood", sender: nil)
+                
+                self.performSegueWithIdentifier("logingood", sender: nil)
             } else {
                 ProgressHUD.showError("Login Invalid.")
             }
@@ -39,14 +40,15 @@ class LoginViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
     }
-    */
+
 
 }

@@ -26,6 +26,7 @@ class SignInViewController: UIViewController {
         user.email = emailTextField.text
         user.password = passwordTextField.text
         user.username = usernameTextField.text
+        user["profilepic"] = PFFile(name: "default_profile.jpeg", data: UIImageJPEGRepresentation(UIImage(named: "kiwi blank"), 0.6))
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {

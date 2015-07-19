@@ -9,8 +9,8 @@ import Parse
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var logIn: UIButton!
-    @IBOutlet weak var signUp: UIButton!
+    @IBOutlet var logIn: UIButton!
+    @IBOutlet var signUp: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
