@@ -17,6 +17,10 @@ class ViewController: UIViewController {
         self.signUp.layer.cornerRadius = 21
         self.signUp.layer.borderWidth = 0.5
         self.signUp.layer.borderColor = UIColor.whiteColor().CGColor!
+        
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
