@@ -35,6 +35,8 @@ class SignInViewController: UIViewController {
                 // Show the errorString somewhere and let the user try again.
             } else {
                 ProgressHUD.showSuccess("Sign Up is Valid!")
+                user["Name"] = "Enter Full Name"
+                user["Occu"] = "Enter Occupation"
                 //self.performSegueWithIdentifier("signupgood", sender: nil)
                 
             }

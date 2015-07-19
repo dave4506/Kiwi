@@ -11,41 +11,91 @@ import Parse
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
 
+    @IBOutlet weak var occupation: IsaoTextField!
+    @IBOutlet weak var fullName: IsaoTextField!
+    @IBOutlet weak var skil: UILabel!
     @IBOutlet var profilePic: UIImageView!
     var skills = ["None","iOS Dev", "Web Dev", "Full Stack Dev","Front End Dev", "Backend Dev","Designer","Android Dev","Algorithms"]
     var skillToAdd = ""
+    var skillArray:NSMutableArray = []
     @IBOutlet var skillPicker: UIPickerView!
-    @IBOutlet var occupationTextField: UITextView!
-    @IBOutlet var nameTextField: UITextView!
-    @IBOutlet var editButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.deleteButton.layer.cornerRadius = 6
-        self.editButton.layer.cornerRadius = 6
         self.skillPicker.hidden = true
         self.skillPicker.dataSource = self
         self.skillPicker.delegate = self
         
-        let userImageFile = PFUser.currentUser()!["profilepic"] as! PFFile
-        userImageFile.getDataInBackgroundWithBlock {
-            (imageData: NSData?, error: NSError?) -> Void in
-            if error == nil {
-                if let imageData = imageData {
-                    let image = UIImage(data:imageData)
-                    self.profilePic.image = image
-                    self.profilePic.layer.cornerRadius = self.profilePic.frame.height / 2
-                    self.profilePic.layer.borderColor = UIColor.whiteColor().CGColor
-                    self.profilePic.layer.borderWidth = 5
-                    self.profilePic.clipsToBounds = true
-                }
-            }else{
-                println(error)
-            }
-        }
+        self.loadStuff()
+        
+        self.skillPicker.hidden = false
+        
+        
 
         
         // Do any additional setup after loading the view.
+    }
+    @IBAction func saveData(sender: AnyObject) {
+        let userNow = PFUser.currentUser()!
+        userNow["Name"] = fullName.text
+        userNow["Occu"] = occupation.text
+        userNow["Skills"] = skillArray
+        userNow.saveInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            ProgressHUD.showSuccess(nil)
+            if error != nil {
+                ProgressHUD.showError("Problem Connecting!")
+            }
+        }
+        
+    }
+    override func viewDidAppear(animated: Bool) {
+        self.loadStuff()
+    }
+    func loadStuff(){
+        let userMan = PFUser.currentUser()!
+        if(userMan["Name"] != nil){
+            fullName.text = PFUser.currentUser()!["Name"] as! String
+        }
+        if(userMan["Occu"] != nil){
+            occupation.text = PFUser.currentUser()!["Occu"] as! String
+        }
+        if(userMan["Skills"] != nil){
+            let dic = userMan["Skills"] as! NSArray
+            for var i = 0; i < dic.count; i++ {
+                skil.text = skil.text! + "\(dic[i]),"
+            }
+        }
+        if(userMan["profilepic"] == nil){
+            profilePic.image = UIImage(contentsOfFile: "prof.jpg")
+            self.profilePic.layer.cornerRadius = self.profilePic.frame.height / 2
+            self.profilePic.layer.borderColor = UIColor.whiteColor().CGColor
+            self.profilePic.layer.borderWidth = 5
+            self.profilePic.clipsToBounds = true
+        }
+        else {
+            let userImageFile = PFUser.currentUser()!["profilepic"] as! PFFile
+            
+            userImageFile.getDataInBackgroundWithBlock {
+                (imageData: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    if let imageData = imageData {
+                        let image = UIImage(data:imageData)
+                        self.profilePic.image = image
+                        self.profilePic.layer.cornerRadius = self.profilePic.frame.height / 2
+                        self.profilePic.layer.borderColor = UIColor.whiteColor().CGColor
+                        self.profilePic.layer.borderWidth = 5
+                        self.profilePic.clipsToBounds = true
+                    }
+                }else{
+                    println(error)
+                }
+            }
+        }
+        
+        
+        
     }
     @IBAction func changeProPic(sender: AnyObject) {
         var ActionSheet = UIActionSheet(title: "Image", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle:nil, otherButtonTitles: "Take a picture")
@@ -68,10 +118,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
         
         //self.profilePic.image = image;
         var file = PFFile(name: "picture.jpeg", data: UIImageJPEGRepresentation(image, 0.6));
+        self.profilePic.image = file as? UIImage
         var user = PFUser.currentUser()!
         user["profilepic"] = file;
         user.saveInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
+            
             ProgressHUD.showSuccess(nil)
             if error != nil {
                 ProgressHUD.showError("Problem Connecting!")
@@ -90,20 +142,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
         print("delete")
     }
 
-    @IBAction func editButtonPressed() {
-        if(!self.nameTextField.editable){
-        self.editButton.setTitle("Done", forState: UIControlState.Normal)
-        self.nameTextField.editable = true
-        self.occupationTextField.editable = true
-        self.skillPicker.hidden = false
-        }
-        else{
-            self.editButton.setTitle("Edit", forState: UIControlState.Normal)
-            self.nameTextField.editable = false
-            self.occupationTextField.editable = false
-            self.skillPicker.hidden = true
-        }
-    }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -119,7 +157,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         skillToAdd = skills[row]
-        print(skillToAdd)
+        let userNow = PFUser.currentUser()!
+        
+        skillArray.addObject(skillToAdd)
+        
+        //userNow.addObject([skillToAdd], forKey: "Skills")
+       
+        skil.text = skil.text! + "\(skillToAdd), " as String
+        
+        //print(skillToAdd)
     }
     
     /*
