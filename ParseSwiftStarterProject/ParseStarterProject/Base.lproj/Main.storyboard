@@ -793,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKT-T7-iOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970.5" y="1062"/>
+            <point key="canvasLocation" x="-1015.5" y="-264"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JgR-hD-Oqd">
@@ -1093,7 +1093,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pBS-vL-5Ii">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.77238714438895839" green="0.81696437481764628" blue="0.85770797730000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.55857010920000005" green="0.71420668050000002" blue="0.85770797730000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VrA-9Q-MVM">
                                     <size key="itemSize" width="159" height="152"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1616,6 +1616,6 @@
         <image name="kiwi blank" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MuL-lM-A5h"/>
+        <segue reference="cPw-3F-2WA"/>
     </inferredMetricsTieBreakers>
 </document>
