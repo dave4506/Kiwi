@@ -53,6 +53,8 @@
 		81EA50221B5B22E700793316 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EA50211B5B22E700793316 /* EditProfileViewController.swift */; };
 		9E11FEE71B5B4F3900E6E7E6 /* JoinackOrProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11FEE61B5B4F3900E6E7E6 /* JoinackOrProfileViewController.swift */; };
 		9E11FEE91B5B59AD00E6E7E6 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11FEE81B5B59AD00E6E7E6 /* ProfileController.swift */; };
+		9E11FEEB1B5B86D900E6E7E6 /* Public_Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E11FEEA1B5B86D900E6E7E6 /* Public_Profile.storyboard */; };
+		9E11FEED1B5B87E500E6E7E6 /* PublicProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E11FEEC1B5B87E500E6E7E6 /* PublicProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +126,8 @@
 		81EA50211B5B22E700793316 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		9E11FEE61B5B4F3900E6E7E6 /* JoinackOrProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinackOrProfileViewController.swift; path = ../JoinackOrProfileViewController.swift; sourceTree = "<group>"; };
 		9E11FEE81B5B59AD00E6E7E6 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = ../ProfileController.swift; sourceTree = "<group>"; };
+		9E11FEEA1B5B86D900E6E7E6 /* Public_Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Public_Profile.storyboard; path = ../Public_Profile.storyboard; sourceTree = "<group>"; };
+		9E11FEEC1B5B87E500E6E7E6 /* PublicProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,11 +189,13 @@
 			children = (
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
 				81EA50211B5B22E700793316 /* EditProfileViewController.swift */,
+				9E11FEEA1B5B86D900E6E7E6 /* Public_Profile.storyboard */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				9E11FEE61B5B4F3900E6E7E6 /* JoinackOrProfileViewController.swift */,
 				9E11FEE81B5B59AD00E6E7E6 /* ProfileController.swift */,
 				81EA501B1B5B19B700793316 /* LoginViewController.swift */,
 				81EA501D1B5B1DA700793316 /* Profile.storyboard */,
+				9E11FEEC1B5B87E500E6E7E6 /* PublicProfileController.swift */,
 				81EA4FDB1B5B0A6900793316 /* SignInViewController.swift */,
 				81EA501F1B5B200300793316 /* ProfileViewController.swift */,
 				81BA814E1A49DA1800E65899 /* Main.storyboard */,
@@ -396,6 +402,7 @@
 				81BA81521A49DA1800E65899 /* Images.xcassets in Resources */,
 				81EA500F1B5B0F5000793316 /* IQKeyboardManager.bundle in Resources */,
 				81EA50141B5B142100793316 /* ProgressHUD.bundle in Resources */,
+				9E11FEEB1B5B86D900E6E7E6 /* Public_Profile.storyboard in Resources */,
 				07FCAA301B5AFC9600102155 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +443,7 @@
 				07FCAA2F1B5AFC9600102155 /* HoshiTextField.swift in Sources */,
 				81EA50021B5B0F5000793316 /* IQNSArray+Sort.m in Sources */,
 				81EA500E1B5B0F5000793316 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				9E11FEED1B5B87E500E6E7E6 /* PublicProfileController.swift in Sources */,
 				81EA50041B5B0F5000793316 /* IQUIView+Hierarchy.m in Sources */,
 				81EA50031B5B0F5000793316 /* IQUITextFieldView+Additions.m in Sources */,
 				07FCAA321B5AFC9600102155 /* JiroTextField.swift in Sources */,
